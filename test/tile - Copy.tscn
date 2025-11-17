@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ks1nwrp5ws7"]
+
+[ext_resource type="Script" uid="uid://cb116ekvewn81" path="res://test/tile.gd" id="1_p645o"]
+[ext_resource type="Texture2D" uid="uid://bijyfdb8et86i" path="res://tile_test.png" id="1_s1tna"]
+
+[node name="Tile" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_p645o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.10747976, 0.10747973, 0.10747973, 1)
+scale = Vector2(0.15930901, 0.15930901)
+texture = ExtResource("1_s1tna")

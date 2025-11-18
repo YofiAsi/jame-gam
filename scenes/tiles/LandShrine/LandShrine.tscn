@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2kj5ipk2os4x"]
+
+[ext_resource type="Script" uid="uid://de8t35ho4sl2b" path="res://scenes/tiles/LandShrine/land_shrine.gd" id="1_rp8sf"]
+[ext_resource type="Texture2D" uid="uid://bxlu8a7cunyn8" path="res://assets/art/tiles/TileCross_1.png" id="2_q5yeu"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q5yeu"]
+vertices = PackedVector2Array(170.88281, -47.023438, -1.9921875, 89.25781, -181.50781, -52.703125, -2.2265625, -184.40625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(187, -47, -2, 102, -198, -53, -2, -197)])
+
+[node name="LandShrine" type="Node2D"]
+script = ExtResource("1_rp8sf")
+metadata/_custom_type_script = "uid://blj3pdtv5rpxr"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_q5yeu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PackedVector2Array(-7, 109, 205, -44, -3, -206, -206, -50)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_q5yeu")

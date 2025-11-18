@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bd5q0ph48tffv"]
+[gd_scene load_steps=16 format=3 uid="uid://bd5q0ph48tffv"]
 
 [ext_resource type="Script" uid="uid://6vgmf7n2hwie" path="res://test/prototype.gd" id="1_4acnr"]
 [ext_resource type="Script" uid="uid://bsws70x373ot4" path="res://test/camera_2d.gd" id="2_6lifs"]
@@ -14,8 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://b7kd0tg547xsk" path="res://assets/art/tiles/TileTurn_1.png" id="10_7x6n7"]
 [ext_resource type="Texture2D" uid="uid://b01hx6mrpsag3" path="res://assets/art/tiles/TileReg_4 - Copy.png" id="13_864ib"]
 [ext_resource type="Texture2D" uid="uid://b6rma2vtsak2s" path="res://assets/art/tiles/TileLine_2 - Copy.png" id="14_22vyj"]
-[ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="15_7x6n7"]
-[ext_resource type="Script" uid="uid://mrr2na7ecnef" path="res://test/sprite_2d.gd" id="16_evver"]
 
 [sub_resource type="Theme" id="Theme_idtdm"]
 
@@ -28,6 +26,7 @@ zoom = Vector2(0.5, 0.5)
 script = ExtResource("2_6lifs")
 
 [node name="MainTileMapLayer" parent="." instance=ExtResource("2_vrcau")]
+y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -140,16 +139,3 @@ script = ExtResource("3_4827u")
 offset_right = 107.0
 offset_bottom = 107.0
 expand_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(10, 1063)
-scale = Vector2(0.512, 0.512)
-texture = ExtResource("15_7x6n7")
-script = ExtResource("16_evver")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Sprite2D"]
-debug_enabled = true
-
-[node name="Timer" type="Timer" parent="Sprite2D"]
-wait_time = 0.5
-autostart = true

@@ -28,6 +28,7 @@ zoom = Vector2(0.5, 0.5)
 script = ExtResource("2_6lifs")
 
 [node name="MainTileMapLayer" parent="." instance=ExtResource("2_vrcau")]
+y_sort_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -142,14 +143,8 @@ offset_bottom = 107.0
 expand_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(10, 1063)
-scale = Vector2(0.512, 0.512)
+scale = Vector2(0.71875, 0.71875)
 texture = ExtResource("15_7x6n7")
 script = ExtResource("16_evver")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Sprite2D"]
-debug_enabled = true
-
-[node name="Timer" type="Timer" parent="Sprite2D"]
-wait_time = 0.5
-autostart = true

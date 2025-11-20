@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dakiflhfpvgvr"]
+
+[ext_resource type="Script" uid="uid://csvl74h8phdpq" path="res://scenes/tiles/RiverTile/river_tile.gd" id="1_qesim"]
+[ext_resource type="Texture2D" uid="uid://ceakmosw8gfqd" path="res://scenes/tiles/RiverTile/sprites/RiverCross.png" id="2_qesim"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_bdikw"]
+vertices = PackedVector2Array(80.28906, -4.6796875, 8.4375, 25, -74.39844, -17.226563, -0.390625, -67.61719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -80, -94, -16, 8, 36, 100, -2)])
+
+[node name="RiverTileCross" type="Node2D"]
+script = ExtResource("1_qesim")
+metadata/_custom_type_script = "uid://csvl74h8phdpq"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qesim")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(204, -52, -1, 107, -217, -46, 0, -199)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_bdikw")
+
+[node name="NavigationLinks" type="Node2D" parent="."]
+
+[node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(2, -2)
+bidirectional = false
+start_position = Vector2(-253, 150)
+end_position = Vector2(-38, -1)
+
+[node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+start_position = Vector2(224, -208)
+end_position = Vector2(37, -35)
+
+[node name="NavigationLink2D5" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+start_position = Vector2(-223, -208)
+end_position = Vector2(-34, -43)
+
+[node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+start_position = Vector2(217, 165)
+end_position = Vector2(39, 5)

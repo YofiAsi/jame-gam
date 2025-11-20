@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dryhnh5vrhii2"]
+
+[ext_resource type="Script" uid="uid://csvl74h8phdpq" path="res://scenes/tiles/RiverTile/river_tile.gd" id="1_lpjp6"]
+[ext_resource type="Texture2D" uid="uid://ler2o6irn8x6" path="res://scenes/tiles/RiverTile/sprites/River_SR.png" id="2_lpjp6"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_gaf84"]
+vertices = PackedVector2Array(109.14844, -70.11719, -74.28125, 72.546875, -128.10156, 34.65625, 66.9375, -114.59375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(68, -128, -145, 35, -74, 85, 124, -69)])
+
+[node name="RiverTileSr" type="Node2D"]
+script = ExtResource("1_lpjp6")
+metadata/_custom_type_script = "uid://csvl74h8phdpq"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lpjp6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(207, -36, 5, 121, -211, -32, 15, -193)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_gaf84")
+
+[node name="NavigationLinks" type="Node2D" parent="."]
+
+[node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+start_position = Vector2(-233, 177)
+end_position = Vector2(-98, 47)
+
+[node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+start_position = Vector2(229, -195)
+end_position = Vector2(82, -84)

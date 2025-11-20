@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkbubrk6mvb6u"]
+
+[ext_resource type="Script" uid="uid://csvl74h8phdpq" path="res://scenes/tiles/RiverTile/river_tile.gd" id="1_lg1wu"]
+
+[node name="RiverTile" type="Node2D"]
+script = ExtResource("1_lg1wu")
+tile_type = 1
+metadata/_custom_type_script = "uid://blj3pdtv5rpxr"

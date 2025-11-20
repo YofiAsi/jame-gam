@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqxfi0hscrn5o"]
+
+[ext_resource type="Script" uid="uid://cktvqrkjjsvl4" path="res://scenes/tiles/station_tile.gd" id="1_3qio8"]
+
+[node name="TileStation" type="Node2D"]
+script = ExtResource("1_3qio8")
+metadata/_custom_type_script = "uid://blj3pdtv5rpxr"

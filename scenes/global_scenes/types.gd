@@ -1,0 +1,23 @@
+extends Node
+
+enum Tile {
+	ROAD_TILE,
+	WATER_TILE,
+	CANYON_TILE,
+	AVAILABLE_TILE,
+}
+
+enum Direction {
+	NO_DIRECTION,
+	TOP_LEFT,
+	TOP_RIGHT,
+	BOTTOM_LEFT,
+	BOTTOM_RIGHT,
+	LINE_TOP_LEFT,
+	LINE_TOP_RIGHT,
+	CROSS,
+	TURN_L,
+	TURN_R,
+	TURN_U,
+	TURN_D
+}

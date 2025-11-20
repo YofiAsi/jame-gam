@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3lap2gnkm7jj"]
 
-[ext_resource type="Script" uid="uid://c6if1bsxx1dim" path="res://scenes/tiles/EmptyTile/empty_tile.gd" id="1_6mo55"]
+[ext_resource type="Script" uid="uid://c6if1bsxx1dim" path="res://scenes/tiles/AvailableTile/available_tile.gd" id="1_6mo55"]
 [ext_resource type="Texture2D" uid="uid://ctkrvxy0b8ipv" path="res://assets/art/tiles/TileReg_2.png" id="2_6mo55"]
 
-[node name="EmptyTile" type="Node2D"]
+[node name="AvailableTile" type="Node2D" groups=["available_tiles"]]
 script = ExtResource("1_6mo55")
+tile_type = 3
 metadata/_custom_type_script = "uid://blj3pdtv5rpxr"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

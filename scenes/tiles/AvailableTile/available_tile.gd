@@ -1,4 +1,4 @@
-class_name EmptyTile extends Tile
+class_name AvailableTile extends Tile
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://r7jrxf77dk3o"]
+
+[ext_resource type="Script" uid="uid://csvl74h8phdpq" path="res://scenes/tiles/RiverTile/river_tile.gd" id="1_tnjam"]
+[ext_resource type="Texture2D" uid="uid://coda5r6h7ge5x" path="res://scenes/tiles/RiverTile/sprites/River_E.png" id="2_tnjam"]
+
+[node name="RiverTileE" type="Node2D"]
+script = ExtResource("1_tnjam")
+metadata/_custom_type_script = "uid://csvl74h8phdpq"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tnjam")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(204, -52, -1, 107, -217, -46, 0, -199)

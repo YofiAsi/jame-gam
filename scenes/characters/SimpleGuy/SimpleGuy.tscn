@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://koj7f8trhfju"]
+
+[ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="1_6jdad"]
+[ext_resource type="Script" uid="uid://b3sugsb83oxc5" path="res://scenes/characters/SimpleGuy/simple_guy.gd" id="1_l7heu"]
+
+[node name="SimpleGuy" type="Node2D"]
+script = ExtResource("1_l7heu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("1_6jdad")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="NavAgentTimer" type="Timer" parent="."]
+autostart = true

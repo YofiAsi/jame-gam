@@ -1,6 +1,8 @@
 class_name SelectTextureButton extends TextureButton
 
-signal pressed_texture(texture: Texture)
+signal pressed_texture(tile_type: Types.Tile)
+
+@export var tile_type: Types.Tile
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,4 +18,4 @@ func _on_mouse_exited() -> void:
 	self.set_modulate(Color("999999"))
 
 func _on_pressed() -> void:
-	self.pressed_texture.emit(self.texture_normal)
+	self.pressed_texture.emit(tile_type)

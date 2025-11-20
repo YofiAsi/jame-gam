@@ -1,0 +1,65 @@
+[gd_scene load_steps=26 format=4 uid="uid://dn86bsmhfehe7"]
+
+[ext_resource type="PackedScene" uid="uid://d3lap2gnkm7jj" path="res://scenes/tiles/AvailableTile/AvailableTile.tscn" id="1_pvtbk"]
+[ext_resource type="PackedScene" uid="uid://dosmjew5732vi" path="res://scenes/tiles/RoadTile/RoadTileE.tscn" id="2_ue8b1"]
+[ext_resource type="PackedScene" uid="uid://b20cri01gitni" path="res://scenes/tiles/RoadTile/RoadTileSL.tscn" id="3_1a7wg"]
+[ext_resource type="PackedScene" uid="uid://d3n3te2y4jf6b" path="res://scenes/tiles/RoadTile/RoadTileSR.tscn" id="4_rp2tp"]
+[ext_resource type="PackedScene" uid="uid://bg86qb1k6fj4k" path="res://scenes/tiles/RoadTile/RoadTileCross.tscn" id="5_p4tgn"]
+[ext_resource type="Script" uid="uid://bb7rr2msc218w" path="res://scenes/WorldMap/world_map.gd" id="5_rgllr"]
+[ext_resource type="PackedScene" uid="uid://8kf75te0iv3x" path="res://scenes/tiles/RoadTile/RoadTileD.tscn" id="6_8ns8s"]
+[ext_resource type="PackedScene" uid="uid://bg63j7buoojol" path="res://scenes/tiles/RoadTile/RoadTileL.tscn" id="7_tfdky"]
+[ext_resource type="PackedScene" uid="uid://dy3pcjggkyebv" path="res://scenes/tiles/RoadTile/RoadTileR.tscn" id="8_ytgnl"]
+[ext_resource type="PackedScene" uid="uid://p0geuyjfq0xf" path="res://scenes/tiles/RoadTile/RoadTileU.tscn" id="9_oivbd"]
+[ext_resource type="PackedScene" uid="uid://df8sfaohnnknh" path="res://scenes/tiles/LandCamp/LandCamp.tscn" id="10_rp2tp"]
+[ext_resource type="PackedScene" uid="uid://d2kj5ipk2os4x" path="res://scenes/tiles/LandShrine/LandShrine.tscn" id="11_p4tgn"]
+[ext_resource type="PackedScene" uid="uid://cseccuf4hh0e6" path="res://scenes/tiles/LandCoin/LandCoin.tscn" id="12_p4tgn"]
+[ext_resource type="PackedScene" uid="uid://r7jrxf77dk3o" path="res://scenes/tiles/RiverTile/RiverTileE.tscn" id="13_ytgnl"]
+[ext_resource type="PackedScene" uid="uid://df5tkdre8tcb0" path="res://scenes/tiles/RiverTile/RiverTileSL.tscn" id="14_oivbd"]
+[ext_resource type="PackedScene" uid="uid://dryhnh5vrhii2" path="res://scenes/tiles/RiverTile/RiverTileSR.tscn" id="15_nrpvx"]
+[ext_resource type="PackedScene" uid="uid://dakiflhfpvgvr" path="res://scenes/tiles/RiverTile/RiverTileCross.tscn" id="16_w6qvq"]
+[ext_resource type="PackedScene" uid="uid://dgy270av1sq74" path="res://scenes/tiles/RiverTile/RiverTileD.tscn" id="17_mm6cy"]
+[ext_resource type="PackedScene" uid="uid://b6112lhio2xtd" path="res://scenes/tiles/RiverTile/RiverTileL.tscn" id="18_1jceu"]
+[ext_resource type="PackedScene" uid="uid://min48iynk1c3" path="res://scenes/tiles/RiverTile/RiverTileR.tscn" id="19_5kkec"]
+[ext_resource type="PackedScene" uid="uid://cyf2oa3ganyr5" path="res://scenes/tiles/RiverTile/RiverTileU.tscn" id="20_7s5w8"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_pvtbk"]
+resource_name = "LandTiles"
+scenes/0/scene = ExtResource("1_pvtbk")
+scenes/1/scene = ExtResource("2_ue8b1")
+scenes/2/scene = ExtResource("3_1a7wg")
+scenes/3/scene = ExtResource("4_rp2tp")
+scenes/4/scene = ExtResource("5_p4tgn")
+scenes/5/scene = ExtResource("6_8ns8s")
+scenes/6/scene = ExtResource("7_tfdky")
+scenes/7/scene = ExtResource("8_ytgnl")
+scenes/8/scene = ExtResource("9_oivbd")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_8ns8s"]
+resource_name = "LandStations"
+scenes/1/scene = ExtResource("10_rp2tp")
+scenes/2/scene = ExtResource("11_p4tgn")
+scenes/3/scene = ExtResource("12_p4tgn")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_804sh"]
+resource_name = "RiverTiles"
+scenes/1/scene = ExtResource("13_ytgnl")
+scenes/2/scene = ExtResource("14_oivbd")
+scenes/3/scene = ExtResource("15_nrpvx")
+scenes/4/scene = ExtResource("16_w6qvq")
+scenes/5/scene = ExtResource("17_mm6cy")
+scenes/6/scene = ExtResource("18_1jceu")
+scenes/7/scene = ExtResource("19_5kkec")
+scenes/8/scene = ExtResource("20_7s5w8")
+
+[sub_resource type="TileSet" id="TileSet_kksyh"]
+tile_shape = 1
+tile_size = Vector2i(482, 348)
+sources/0 = SubResource("TileSetScenesCollectionSource_pvtbk")
+sources/1 = SubResource("TileSetScenesCollectionSource_8ns8s")
+sources/2 = SubResource("TileSetScenesCollectionSource_804sh")
+
+[node name="WorldMap" type="TileMapLayer"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAQAAAAEAAAAAAAAAAgD/////AAAAAAAAAAAAAP//AAAAAAAAAAD//wEAAAAAAAAAAAAEAAEAAQAAAAAAAgABAAIAAAAAAAAAAgABAAMAAAAAAAAABAACAAQAAAAAAAAAAgACAAUAAAAAAAAABQADAAQAAAAAAAAAAwADAAMAAAAAAAAAAwAEAAIAAAAAAAAAAwAAAAUAAQAAAAAAAwABAAQAAAAAAAAAAwA=")
+tile_set = SubResource("TileSet_kksyh")
+script = ExtResource("5_rgllr")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg63j7buoojol"]
+
+[ext_resource type="Script" uid="uid://cajo2wr6rwea8" path="res://scenes/tiles/RoadTile/road_tile.gd" id="1_ybbg0"]
+[ext_resource type="Texture2D" uid="uid://ddhps3yr0ospg" path="res://scenes/tiles/RoadTile/sprites/Road_L.png" id="2_lt06b"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xpnqu"]
+vertices = PackedVector2Array(71.42969, -51.242188, -5.953125, 5.5625, -83.046875, -51.84375, -7.8671875, -105.77344)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(88, -52, -8, -118, -100, -52, -6, 18, 88, -51)])
+
+[node name="RoadTileL" type="Node2D"]
+script = ExtResource("1_ybbg0")
+metadata/_custom_type_script = "uid://cajo2wr6rwea8"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lt06b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(204, -52, -1, 107, -217, -46, 0, -199)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_xpnqu")
+
+[node name="NavigationLinks" type="Node2D" parent="."]
+
+[node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+start_position = Vector2(209, -219)
+end_position = Vector2(21, -71)
+
+[node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+start_position = Vector2(232, 118)
+end_position = Vector2(24, -29)

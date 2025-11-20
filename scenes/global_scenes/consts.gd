@@ -28,3 +28,7 @@ const TYPE_ATLAS: Dictionary[Types.Tile, int] = {
 	Types.Tile.WATER_TILE: 2,
 	Types.Tile.CANYON_TILE: 3,
 }
+
+const INIT_MONEY: int = 10
+const MEN_PRICE: int = 1
+const MAX_MEN_AMOUNT: int = 20

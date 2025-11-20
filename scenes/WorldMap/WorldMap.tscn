@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dn86bsmhfehe7"]
+[gd_scene load_steps=27 format=4 uid="uid://dn86bsmhfehe7"]
 
 [ext_resource type="PackedScene" uid="uid://d3lap2gnkm7jj" path="res://scenes/tiles/AvailableTile/AvailableTile.tscn" id="1_pvtbk"]
 [ext_resource type="PackedScene" uid="uid://dosmjew5732vi" path="res://scenes/tiles/RoadTile/RoadTileE.tscn" id="2_ue8b1"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://df8sfaohnnknh" path="res://scenes/tiles/LandCamp/LandCamp.tscn" id="10_rp2tp"]
 [ext_resource type="PackedScene" uid="uid://d2kj5ipk2os4x" path="res://scenes/tiles/LandShrine/LandShrine.tscn" id="11_p4tgn"]
 [ext_resource type="PackedScene" uid="uid://cseccuf4hh0e6" path="res://scenes/tiles/LandCoin/LandCoin.tscn" id="12_p4tgn"]
+[ext_resource type="PackedScene" uid="uid://cqi7crrvxmn2o" path="res://scenes/tiles/LandFood/LandFood.tscn" id="13_mm6cy"]
 [ext_resource type="PackedScene" uid="uid://r7jrxf77dk3o" path="res://scenes/tiles/RiverTile/RiverTileE.tscn" id="13_ytgnl"]
 [ext_resource type="PackedScene" uid="uid://df5tkdre8tcb0" path="res://scenes/tiles/RiverTile/RiverTileSL.tscn" id="14_oivbd"]
 [ext_resource type="PackedScene" uid="uid://dryhnh5vrhii2" path="res://scenes/tiles/RiverTile/RiverTileSR.tscn" id="15_nrpvx"]
@@ -39,6 +40,7 @@ resource_name = "LandStations"
 scenes/1/scene = ExtResource("10_rp2tp")
 scenes/2/scene = ExtResource("11_p4tgn")
 scenes/3/scene = ExtResource("12_p4tgn")
+scenes/4/scene = ExtResource("13_mm6cy")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_804sh"]
 resource_name = "RiverTiles"
@@ -60,6 +62,6 @@ sources/2 = SubResource("TileSetScenesCollectionSource_804sh")
 
 [node name="WorldMap" type="TileMapLayer"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAQAAAAEAAAAAAAAAAgD/////AAAAAAAAAAAAAP//AAAAAAAAAAD//wEAAAAAAAAAAAAEAAEAAQAAAAAAAgABAAIAAAAAAAAAAgABAAMAAAAAAAAABAACAAQAAAAAAAAAAgACAAUAAAAAAAAABQADAAQAAAAAAAAAAwADAAMAAAAAAAAAAwAEAAIAAAAAAAAAAwAAAAUAAQAAAAAAAwABAAQAAAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAQAAAAEAAAAAAAAAAgD/////AAAAAAAAAAAAAP//AAAAAAAAAAD//wEAAAAAAAAAAAAEAAEAAQAAAAAAAgABAAIAAAAAAAAAAgABAAMAAAAAAAAABAACAAQAAAAAAAAAAgACAAUAAAAAAAAABQADAAQAAAAAAAAAAwADAAMAAAAAAAAAAwAEAAIAAAAAAAAAAwAAAAUAAQAAAAAAAwABAAQAAAAAAAAAAwD+/wMAAQAAAAAABAA=")
 tile_set = SubResource("TileSet_kksyh")
 script = ExtResource("5_rgllr")

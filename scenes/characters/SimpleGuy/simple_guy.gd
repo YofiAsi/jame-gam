@@ -5,17 +5,19 @@ var curr_dest_idx: int = 0
 var dest_array: Array[Tile]
 var has_dest: bool = false
 
-@export var camp_tile: LandCamp
-@export var coin_tile: LandCoin
-@export var shrine_tile: LandShrine
-@export var speed: float = 500.0
+var camp_tile: LandCamp
+var coin_tile: LandCoin
+var shrine_tile: LandShrine
+var speed: float = 500.0
+
+const SPEED_MODIFIER: float  = 100.0
 
 @onready var nav_agent_timer: Timer = $NavAgentTimer
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 func _ready() -> void:
-	pass
+	self.speed += randf_range(-1.0, 1.0) * SPEED_MODIFIER
 
 func _process(delta: float) -> void:
 	if not self.has_dest:
@@ -41,11 +43,11 @@ func _process(delta: float) -> void:
 
 func _find_destinations() -> void:
 	if not is_instance_valid(coin_tile):
-		coin_tile = get_node("/root/Prototype/WorldMap/LandCoin")
+		coin_tile = get_node("/root/MainGameNode/WorldMap/LandCoin")
 	if not is_instance_valid(shrine_tile):
-		shrine_tile = get_node("/root/Prototype/WorldMap/LandShrine")
+		shrine_tile = get_node("/root/MainGameNode/WorldMap/LandShrine")
 	if not is_instance_valid(camp_tile):
-		camp_tile = get_node("/root/Prototype/WorldMap/LandCamp")
+		camp_tile = get_node("/root/MainGameNode/WorldMap/LandCamp")
 
 func _set_destination() -> void:
 	self.curr_dest = dest_array[curr_dest_idx].global_position

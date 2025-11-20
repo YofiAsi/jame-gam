@@ -21,7 +21,8 @@ func set_texture(texture: Texture) -> void:
 	sprite.texture = texture
 
 func _on_mouse_entered() -> void:
-	pass
+	if Input.is_action_pressed("click"):
+		tile_pressed.emit(self)
 
 func _on_mouse_exited() -> void:
 	pass

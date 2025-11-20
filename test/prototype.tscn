@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bd5q0ph48tffv"]
+[gd_scene load_steps=16 format=3 uid="uid://bd5q0ph48tffv"]
 
 [ext_resource type="Script" uid="uid://6vgmf7n2hwie" path="res://test/prototype.gd" id="1_4acnr"]
 [ext_resource type="Script" uid="uid://bsws70x373ot4" path="res://test/camera_2d.gd" id="2_6lifs"]
@@ -6,11 +6,15 @@
 [ext_resource type="Script" uid="uid://g520lfferol1" path="res://ui/buttons/select_tile_button/select_tile_button.gd" id="3_4827u"]
 [ext_resource type="PackedScene" uid="uid://bs34qi8yu0kaj" path="res://scenes/GameManagers/CurrencyManager/CurrencyManager.tscn" id="3_gvehv"]
 [ext_resource type="Texture2D" uid="uid://bnroswrtgob0g" path="res://assets/art/tiles/TileReg_1.png" id="6_wysyr"]
+[ext_resource type="Script" uid="uid://ca7xh6cx35xqt" path="res://test/money_label.gd" id="9_6lifs"]
 [ext_resource type="Script" uid="uid://bm81b4g5lmfnw" path="res://test/background.gd" id="9_4827u"]
 [ext_resource type="Shader" uid="uid://5oecyiajl222" path="res://shaders/background.gdshader" id="10_wysyr"]
 [ext_resource type="Texture2D" uid="uid://b01hx6mrpsag3" path="res://assets/art/tiles/TileReg_4 - Copy.png" id="13_864ib"]
 [ext_resource type="PackedScene" uid="uid://bcfmnsofkiqrr" path="res://scenes/GameManagers/TileManager/TileManager.tscn" id="17_55g7q"]
 [ext_resource type="PackedScene" uid="uid://koj7f8trhfju" path="res://scenes/characters/SimpleGuy/SimpleGuy.tscn" id="17_rm2rm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wysyr"]
+font_size = 40
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6lifs"]
 shader = ExtResource("10_wysyr")
@@ -71,6 +75,13 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("3_4827u")
 tile_type = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_wysyr")
+script = ExtResource("9_6lifs")
 
 [node name="Background" type="Node2D" parent="."]
 script = ExtResource("9_4827u")

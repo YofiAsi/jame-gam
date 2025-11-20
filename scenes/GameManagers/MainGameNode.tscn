@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://connkatv77nua"]
+
+[ext_resource type="Script" uid="uid://ckhsbi6pvekwk" path="res://scenes/GameManagers/main_game_node.gd" id="1_d6v67"]
+[ext_resource type="PackedScene" uid="uid://bcfmnsofkiqrr" path="res://scenes/GameManagers/TileManager/TileManager.tscn" id="2_jnkpk"]
+[ext_resource type="Script" uid="uid://bsws70x373ot4" path="res://test/camera_2d.gd" id="4_1cwct"]
+[ext_resource type="PackedScene" uid="uid://dn86bsmhfehe7" path="res://scenes/WorldMap/WorldMap.tscn" id="5_5rtb5"]
+[ext_resource type="Texture2D" uid="uid://bnroswrtgob0g" path="res://assets/art/tiles/TileReg_1.png" id="6_d628t"]
+[ext_resource type="Script" uid="uid://g520lfferol1" path="res://ui/buttons/select_tile_button/select_tile_button.gd" id="7_lfce0"]
+[ext_resource type="Texture2D" uid="uid://b01hx6mrpsag3" path="res://assets/art/tiles/TileReg_4 - Copy.png" id="8_yv3pk"]
+[ext_resource type="Script" uid="uid://ca7xh6cx35xqt" path="res://test/money_label.gd" id="9_y4uli"]
+[ext_resource type="Shader" uid="uid://5oecyiajl222" path="res://shaders/background.gdshader" id="11_nj1lh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tdaqa"]
+font_size = 40
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6wwc"]
+shader = ExtResource("11_nj1lh")
+shader_parameter/color0 = Color(0.53, 0.81, 0.92, 1)
+shader_parameter/color1 = Color(0.27, 0.58, 0.8, 1)
+shader_parameter/camera_position = Vector2(0, 0)
+shader_parameter/camera_scale = 1.0
+shader_parameter/noise_frequency = 0.004
+shader_parameter/noise_offset = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_43ytc"]
+
+[node name="MainGameNode" type="Node2D"]
+script = ExtResource("1_d6v67")
+
+[node name="TileManager" parent="." node_paths=PackedStringArray("world_map") instance=ExtResource("2_jnkpk")]
+world_map = NodePath("../WorldMap")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(965, 545)
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("4_1cwct")
+
+[node name="WorldMap" parent="." instance=ExtResource("5_5rtb5")]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 313.0
+offset_top = -199.0
+offset_right = -313.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="HUD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("6_d628t")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+
+[node name="TextureButton9" type="TextureButton" parent="HUD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("8_yv3pk")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+tile_type = 1
+
+[node name="Label" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
+label_settings = SubResource("LabelSettings_tdaqa")
+script = ExtResource("9_y4uli")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -4
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+z_index = -100
+material = SubResource("ShaderMaterial_y6wwc")
+offset_left = -25.0
+offset_top = -35.0
+offset_right = 1945.0
+offset_bottom = 1118.0
+texture = SubResource("PlaceholderTexture2D_43ytc")
+
+[node name="Guys" type="Node2D" parent="."]

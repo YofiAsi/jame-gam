@@ -20,6 +20,7 @@ SoundManager="*res://scenes/global_scenes/SoundManager/SoundManager.tscn"
 Types="*res://scenes/global_scenes/types.gd"
 TileCreationEmmiter="*res://scenes/global_scenes/tile_creation_emmiter.gd"
 Consts="*res://scenes/global_scenes/consts.gd"
+CurrencyManager="*res://scenes/GameManagers/CurrencyManager/currency_manager.gd"
 
 [display]
 

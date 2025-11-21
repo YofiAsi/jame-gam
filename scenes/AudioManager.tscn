@@ -1,0 +1,105 @@
+[gd_scene load_steps=19 format=3 uid="uid://dju43ksy3sw6a"]
+
+[ext_resource type="AudioStream" uid="uid://jqaxikjtrh4r" path="res://assets/Sound/Wind_Ambient_loopable.mp3" id="1_hux41"]
+[ext_resource type="AudioStream" uid="uid://c0evogvo6gn8c" path="res://assets/Sound/Demon_click.mp3" id="1_wk67d"]
+[ext_resource type="AudioStream" uid="uid://caduxxe4w4th6" path="res://assets/Sound/Map_Hover.mp3" id="2_lp0i2"]
+[ext_resource type="AudioStream" uid="uid://xtf7m7k2pn5s" path="res://assets/Sound/Tiles_Boogle.mp3" id="3_kuv82"]
+[ext_resource type="AudioStream" uid="uid://de8vrwaccy55k" path="res://assets/Sound/Tiles_Hover.mp3" id="4_nqh3p"]
+[ext_resource type="AudioStream" uid="uid://bwv71aufk5pn7" path="res://assets/Sound/Tiles_places_1.mp3" id="5_guu55"]
+[ext_resource type="AudioStream" uid="uid://hqvv7kuu124c" path="res://assets/Sound/Tiles_places_2.mp3" id="6_welk2"]
+[ext_resource type="AudioStream" uid="uid://j5jjfe0wftbn" path="res://assets/Sound/Tiles_places_3.mp3" id="7_lmqos"]
+[ext_resource type="AudioStream" uid="uid://dav8xm1vx24vh" path="res://assets/Sound/Tiles_Select-grab.mp3" id="8_o56bu"]
+[ext_resource type="AudioStream" uid="uid://v3g0ui2jrdss" path="res://assets/Sound/Campfire.mp3" id="10_d8q4o"]
+[ext_resource type="AudioStream" uid="uid://bonh3hg6754cl" path="res://assets/Sound/Footsteps_loopable.mp3" id="11_gjdu5"]
+[ext_resource type="AudioStream" uid="uid://dvdha65ifjrt0" path="res://assets/Sound/Night_ambient.mp3" id="12_rxh72"]
+[ext_resource type="AudioStream" uid="uid://fg46e7r0a01x" path="res://assets/Sound/tower_zap.mp3" id="13_lqo3f"]
+[ext_resource type="AudioStream" uid="uid://hy24gtwrxyjs" path="res://assets/Sound/Coin_collected.mp3" id="14_2br8b"]
+[ext_resource type="AudioStream" uid="uid://kut3wfrt4j2a" path="res://assets/Sound/Demon_kill.mp3" id="15_bayib"]
+[ext_resource type="AudioStream" uid="uid://cnnwgviqgvfbv" path="res://assets/Sound/Prayer_collected.mp3" id="16_nrd24"]
+[ext_resource type="AudioStream" uid="uid://c0x81ao7tg4t3" path="res://assets/Music/Music game jam v2.mp3" id="17_0ffjb"]
+[ext_resource type="AudioStream" uid="uid://dmpxjrsxkm04g" path="res://assets/Sound/Slider-Thick.mp3" id="18_acs0d"]
+
+[node name="AudioManager" type="Node"]
+
+[node name="PlayerAction" type="Node" parent="."]
+
+[node name="Demon_click" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("1_wk67d")
+bus = &"PlayerAction"
+
+[node name="Map_Hover" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("2_lp0i2")
+bus = &"PlayerAction"
+
+[node name="TilesBoogle" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("3_kuv82")
+bus = &"PlayerAction"
+
+[node name="TilesHover" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("4_nqh3p")
+bus = &"PlayerAction"
+
+[node name="TilesPlaces1" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("5_guu55")
+bus = &"PlayerAction"
+
+[node name="TilesPlaces2" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("6_welk2")
+bus = &"PlayerAction"
+
+[node name="TilesPlaces3" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("7_lmqos")
+bus = &"PlayerAction"
+
+[node name="TilesSelectGrab" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("8_o56bu")
+bus = &"PlayerAction"
+
+[node name="Ambience" type="Node" parent="."]
+
+[node name="Wind_ambient" type="AudioStreamPlayer" parent="Ambience"]
+stream = ExtResource("1_hux41")
+bus = &"Ambience"
+parameters/looping = false
+
+[node name="Campfire" type="AudioStreamPlayer" parent="Ambience"]
+stream = ExtResource("10_d8q4o")
+bus = &"Ambience"
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Ambience"]
+stream = ExtResource("11_gjdu5")
+bus = &"Ambience"
+
+[node name="Night-ambience" type="AudioStreamPlayer" parent="Ambience"]
+stream = ExtResource("12_rxh72")
+bus = &"Ambience"
+
+[node name="Effect" type="Node" parent="."]
+
+[node name="TowerZap" type="AudioStreamPlayer" parent="Effect"]
+stream = ExtResource("13_lqo3f")
+bus = &"Effects"
+
+[node name="Coincollected" type="AudioStreamPlayer" parent="Effect"]
+stream = ExtResource("14_2br8b")
+bus = &"Effects"
+
+[node name="demon_kill" type="AudioStreamPlayer" parent="Effect"]
+stream = ExtResource("15_bayib")
+bus = &"Effects"
+
+[node name="Prayer_collected" type="AudioStreamPlayer" parent="Effect"]
+stream = ExtResource("16_nrd24")
+bus = &"Effects"
+
+[node name="Music" type="Node" parent="."]
+
+[node name="MusicGameJamV2" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("17_0ffjb")
+bus = &"Music"
+
+[node name="UI" type="Node" parent="."]
+
+[node name="SliderThick" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("18_acs0d")
+bus = &"UI"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dju43ksy3sw6a"]
+[gd_scene load_steps=20 format=3 uid="uid://dju43ksy3sw6a"]
 
 [ext_resource type="AudioStream" uid="uid://jqaxikjtrh4r" path="res://assets/Sound/Wind_Ambient_loopable.mp3" id="1_hux41"]
 [ext_resource type="AudioStream" uid="uid://c0evogvo6gn8c" path="res://assets/Sound/Demon_click.mp3" id="1_wk67d"]
@@ -16,8 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://hy24gtwrxyjs" path="res://assets/Sound/Coin_collected.mp3" id="14_2br8b"]
 [ext_resource type="AudioStream" uid="uid://kut3wfrt4j2a" path="res://assets/Sound/Demon_kill.mp3" id="15_bayib"]
 [ext_resource type="AudioStream" uid="uid://cnnwgviqgvfbv" path="res://assets/Sound/Prayer_collected.mp3" id="16_nrd24"]
-[ext_resource type="AudioStream" uid="uid://c0x81ao7tg4t3" path="res://assets/Music/Music game jam v2.mp3" id="17_0ffjb"]
+[ext_resource type="AudioStream" uid="uid://b7ak6ddaq44ms" path="res://assets/Music/Music game jam INTRO.mp3" id="17_lp0i2"]
 [ext_resource type="AudioStream" uid="uid://dmpxjrsxkm04g" path="res://assets/Sound/Slider-Thick.mp3" id="18_acs0d"]
+[ext_resource type="AudioStream" uid="uid://bgtwq7rx7wo88" path="res://assets/Music/Music game jam LOOP.mp3" id="18_kuv82"]
 
 [node name="AudioManager" type="Node"]
 
@@ -94,9 +95,11 @@ bus = &"Effects"
 
 [node name="Music" type="Node" parent="."]
 
-[node name="MusicGameJamV2" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("17_0ffjb")
-bus = &"Music"
+[node name="MusicGameJamIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_lp0i2")
+
+[node name="MusicGameJamLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_kuv82")
 
 [node name="UI" type="Node" parent="."]
 

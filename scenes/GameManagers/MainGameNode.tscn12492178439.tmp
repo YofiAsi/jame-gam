@@ -1,9 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://connkatv77nua"]
+[gd_scene load_steps=18 format=3 uid="uid://connkatv77nua"]
 
 [ext_resource type="Script" uid="uid://ckhsbi6pvekwk" path="res://scenes/GameManagers/main_game_node.gd" id="1_d6v67"]
-[ext_resource type="Script" uid="uid://bf6whxbwsv0xs" path="res://scenes/GameManagers/portal_manager.gd" id="2_1cwct"]
 [ext_resource type="PackedScene" uid="uid://bcfmnsofkiqrr" path="res://scenes/GameManagers/TileManager/TileManager.tscn" id="2_jnkpk"]
-[ext_resource type="PackedScene" uid="uid://cfjqmp12rhs65" path="res://scenes/characters/Demon/Demon.tscn" id="3_5rtb5"]
 [ext_resource type="Script" uid="uid://bsws70x373ot4" path="res://test/camera_2d.gd" id="4_1cwct"]
 [ext_resource type="PackedScene" uid="uid://dn86bsmhfehe7" path="res://scenes/WorldMap/WorldMap.tscn" id="5_5rtb5"]
 [ext_resource type="Script" uid="uid://cffsxppxbna0m" path="res://scenes/GameManagers/hud.gd" id="5_tfa6w"]
@@ -12,19 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://b01hx6mrpsag3" path="res://assets/art/tiles/TileReg_4 - Copy.png" id="8_yv3pk"]
 [ext_resource type="Script" uid="uid://ca7xh6cx35xqt" path="res://test/money_label.gd" id="9_y4uli"]
 [ext_resource type="Script" uid="uid://b3uvifrij30ry" path="res://scenes/GameManagers/day_count.gd" id="10_tfa6w"]
-[ext_resource type="Script" uid="uid://rc6ytr4awkkt" path="res://scenes/GameManagers/food_label.gd" id="10_tpuus"]
 [ext_resource type="Script" uid="uid://cvktvjt5cnqnq" path="res://scenes/GameManagers/background.gd" id="11_jnkpk"]
 [ext_resource type="Shader" uid="uid://5oecyiajl222" path="res://shaders/background.gdshader" id="11_nj1lh"]
 
 [sub_resource type="Curve" id="Curve_tpuus"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_tpuus"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 181, -942, 0, 0, 0, 0, -1405, -884, 0, 0, 0, 0, -1766, 616, 0, 0, 0, 0, -1333, 1842, 0, 0, 0, 0, 988, 2159, 0, 0, 0, 0, 2964, 1943, 0, 0, 0, 0, 3858, 1337, 0, 0, 0, 0, 4233, -494, 0, 0, 0, 0, 2531, -1071, 0, 0, 0, 0, 184, -943)
-}
-point_count = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_tdaqa"]
 font_size = 40
@@ -48,23 +39,6 @@ shader_parameter/noise_offset = Vector2(0, 0)
 script = ExtResource("1_d6v67")
 modulate_curve = SubResource("Curve_tpuus")
 
-[node name="PortalManager" type="Node2D" parent="." node_paths=PackedStringArray("demons_node")]
-script = ExtResource("2_1cwct")
-demon_scene = ExtResource("3_5rtb5")
-demons_node = NodePath("../Demons")
-
-[node name="Path2D" type="Path2D" parent="PortalManager"]
-position = Vector2(-2941.5654, -1179.879)
-scale = Vector2(3.3847308, 3.331579)
-curve = SubResource("Curve2D_tpuus")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="PortalManager/Path2D"]
-position = Vector2(181, -942)
-rotation = 3.105039
-
-[node name="SpawnTimer" type="Timer" parent="PortalManager"]
-one_shot = true
-
 [node name="TileManager" parent="." node_paths=PackedStringArray("world_map") instance=ExtResource("2_jnkpk")]
 world_map = NodePath("../WorldMap")
 
@@ -86,13 +60,6 @@ offset_right = 81.0
 offset_bottom = 95.0
 text = "day-night
 "
-
-[node name="Button2" type="Button" parent="HUD"]
-offset_left = 1.0
-offset_top = 131.0
-offset_right = 106.0
-offset_bottom = 162.0
-text = "spawn camp"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
 visible = false
@@ -127,22 +94,12 @@ stretch_mode = 5
 script = ExtResource("7_lfce0")
 tile_type = 1
 
-[node name="Coin" type="Label" parent="HUD"]
-offset_left = 1884.0
-offset_right = 1924.0
-offset_bottom = 55.0
+[node name="Label" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
 text = "0"
 label_settings = SubResource("LabelSettings_tdaqa")
 script = ExtResource("9_y4uli")
-
-[node name="Food" type="Label" parent="HUD"]
-offset_left = 1884.0
-offset_top = 87.0
-offset_right = 1924.0
-offset_bottom = 142.0
-text = "0"
-label_settings = SubResource("LabelSettings_tdaqa")
-script = ExtResource("10_tpuus")
 
 [node name="DayCount" type="Label" parent="HUD"]
 offset_top = 1044.0
@@ -164,10 +121,5 @@ offset_top = -35.0
 offset_right = 1945.0
 offset_bottom = 1118.0
 texture = SubResource("PlaceholderTexture2D_43ytc")
-expand_mode = 2
 
 [node name="Guys" type="Node2D" parent="."]
-
-[node name="Demons" type="Node2D" parent="."]
-
-[connection signal="pressed" from="HUD/Button2" to="." method="_on_button_2_pressed"]

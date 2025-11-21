@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfjqmp12rhs65"]
+
+[ext_resource type="Script" uid="uid://bgcdky8mf7or8" path="res://scenes/characters/Demon/demon.gd" id="1_5olcj"]
+[ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="2_2ckmm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ckmm"]
+radius = 70.00714
+
+[node name="Demon" type="Node2D"]
+script = ExtResource("1_5olcj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.13, 0.13, 1)
+texture = ExtResource("2_2ckmm")
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_2ckmm")
+
+[connection signal="input_event" from="HitBox" to="." method="_on_input_event"]

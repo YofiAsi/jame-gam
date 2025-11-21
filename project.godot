@@ -21,15 +21,19 @@ Types="*res://scenes/global_scenes/types.gd"
 TileCreationEmmiter="*res://scenes/global_scenes/tile_creation_emmiter.gd"
 Consts="*res://scenes/global_scenes/consts.gd"
 CurrencyManager="*res://scenes/GameManagers/CurrencyManager/currency_manager.gd"
+DayCycleManager="*res://scenes/GameManagers/day_cycle_manager.gd"
+FoodManager="*res://scenes/GameManagers/FoodManager/food_manager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [global_group]
 
 available_tiles=""
+camp=""
 
 [input]
 
@@ -82,3 +86,7 @@ empty_visibility={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
 ]
 }
+
+[rendering]
+
+viewport/hdr_2d=true

@@ -1,41 +1,20 @@
-class_name LandCamp extends StationTile
+class_name LandCamp extends Camp
 
-
-
-@onready var spawn_timer: Timer = $SpawnTimer
-
-var cur_men_amount: int = 0
+var food_tile: LandFood
 var simple_guy: PackedScene = preload("uid://koj7f8trhfju")
 
 func _ready() -> void:
 	super._ready()
-	$BuyManButton.pressed.connect(_on_man_buy_button_pressed)
-	
-func _process(delta: float) -> void:
-	pass
-
-func add_man() -> void:
-	
-		_add_man()
-
-func _can_add_man() -> bool:
-	if cur_men_amount >= Consts.MAX_MEN_AMOUNT:
-		return false
-	return true
 
 func _add_man() -> void:
 	var guy_node: SimpleGuy = simple_guy.instantiate()
+	guy_node.camp_tile = self
 	guy_node.global_position = self.global_position
+	guy_node.dest_array = [food_tile, self]
 	get_node("/root/MainGameNode/Guys").add_child(guy_node)
-	
+	man_array.push_back(guy_node)
+	cur_men_amount += 1
+	_update_men_count_label()
 
-func _on_man_buy_button_pressed() -> void:
-	if not _can_add_man():
-		_full_occupation()
-		return
-	if not CurrencyManager.buy(Consts.MEN_PRICE):
-		return
-	_add_man()
-
-func _full_occupation() -> void:
-	pass
+func add_resource(amount: int) -> void:
+	FoodManager.add_food(amount)

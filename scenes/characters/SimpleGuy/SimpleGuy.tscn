@@ -11,6 +11,8 @@ scale = Vector2(0.328125, 0.328125)
 texture = ExtResource("1_6jdad")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 100.0
 
 [node name="NavAgentTimer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true

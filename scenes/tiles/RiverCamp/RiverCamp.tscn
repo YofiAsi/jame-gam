@@ -1,26 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://df8sfaohnnknh"]
+[gd_scene load_steps=6 format=3 uid="uid://b2k8mvmffwj3k"]
 
-[ext_resource type="Script" uid="uid://b8b2wpiwjxslx" path="res://scenes/tiles/LandCamp/land_camp.gd" id="1_gwxp4"]
-[ext_resource type="Texture2D" uid="uid://b3p5ud6fwvojs" path="res://scenes/tiles/LandCamp/CampTile.png" id="2_h0k4d"]
-[ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="3_h0k4d"]
+[ext_resource type="Script" uid="uid://88x6q76yuukr" path="res://scenes/tiles/RiverCamp/river_camp.gd" id="1_rvtyl"]
+[ext_resource type="Texture2D" uid="uid://b3p5ud6fwvojs" path="res://scenes/tiles/LandCamp/CampTile.png" id="2_rvtyl"]
+[ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="3_vwisk"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_rn0hb"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7a68g"]
 vertices = PackedVector2Array(182.40625, -52.367188, 2.6328125, 94.390625, -189.60938, -44.75, 3.9375, -176.85156)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(4, -189, -207, -45, 3, 107, 199, -53)])
 
-[sub_resource type="LabelSettings" id="LabelSettings_h0k4d"]
+[sub_resource type="LabelSettings" id="LabelSettings_bisgu"]
 font_size = 32
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
 
-[node name="LandCamp" type="Node2D" groups=["camp"]]
-script = ExtResource("1_gwxp4")
+[node name="RiverCamp" type="Node2D"]
+script = ExtResource("1_rvtyl")
+tile_type = 1
 metadata/_custom_type_script = "uid://cktvqrkjjsvl4"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.4666667, 1, 1)
 position = Vector2(0, -80)
-texture = ExtResource("2_h0k4d")
+texture = ExtResource("2_rvtyl")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -29,28 +31,33 @@ visible = false
 polygon = PackedVector2Array(-9, 111, 205, -56, 3, -214, -201, -45)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_rn0hb")
+navigation_polygon = SubResource("NavigationPolygon_7a68g")
+navigation_layers = 2
 
 [node name="NavigationLinks" type="Node2D" parent="."]
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
 position = Vector2(2, -2)
 bidirectional = false
+navigation_layers = 2
 start_position = Vector2(-253, 150)
 end_position = Vector2(-94, 14)
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
 bidirectional = false
+navigation_layers = 2
 start_position = Vector2(209, -219)
 end_position = Vector2(85, -109)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="NavigationLinks"]
 bidirectional = false
+navigation_layers = 2
 start_position = Vector2(-211, -216)
 end_position = Vector2(-87, -105)
 
 [node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
 bidirectional = false
+navigation_layers = 2
 start_position = Vector2(232, 118)
 end_position = Vector2(77, 13)
 
@@ -72,7 +79,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 4
 text = "+1"
-icon = ExtResource("3_h0k4d")
+icon = ExtResource("3_vwisk")
 icon_alignment = 1
 vertical_icon_alignment = 2
 expand_icon = true
@@ -80,6 +87,6 @@ expand_icon = true
 [node name="MenCount" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "0/10"
-label_settings = SubResource("LabelSettings_h0k4d")
+label_settings = SubResource("LabelSettings_bisgu")
 
-[node name="Guys" type="Node2D" parent="."]
+[node name="Boats" type="Node2D" parent="."]

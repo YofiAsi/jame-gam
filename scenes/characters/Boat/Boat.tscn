@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf1eiy0ygwiga"]
+
+[ext_resource type="Script" uid="uid://bs0jps5qsisbq" path="res://scenes/characters/Boat/boat.gd" id="1_kckb5"]
+[ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="2_x3gxx"]
+
+[node name="Boat" type="Node2D"]
+script = ExtResource("1_kckb5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("2_x3gxx")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 100.0
+navigation_layers = 2
+
+[node name="NavAgentTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

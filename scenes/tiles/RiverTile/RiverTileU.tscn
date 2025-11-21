@@ -23,17 +23,20 @@ polygon = PackedVector2Array(204, -52, -1, 107, -217, -46, 0, -199)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(7, 11)
 navigation_polygon = SubResource("NavigationPolygon_q114w")
+navigation_layers = 2
 
 [node name="NavigationLinks" type="Node2D" parent="."]
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
 position = Vector2(2, -2)
 bidirectional = false
+navigation_layers = 2
 start_position = Vector2(-217, 185)
 end_position = Vector2(-18, -3)
 
 [node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
 position = Vector2(0, -2)
 bidirectional = false
+navigation_layers = 2
 start_position = Vector2(204, 151)
 end_position = Vector2(15, 1)

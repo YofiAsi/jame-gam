@@ -1,1 +1,1 @@
-extends StationTile
+class_name LandFood extends StationTile

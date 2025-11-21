@@ -5,6 +5,7 @@ var init_cell_added: bool = false
 
 func _ready() -> void:
 	TileCreationEmmiter.tile_created.connect(_on_tile_created)
+	TileCreationEmmiter.station_tile_created.connect(_on_tile_created)
 
 func _set_map() -> void:
 	self.map_to_scene_mat = Dictionary()
@@ -48,8 +49,16 @@ func local_to_instance(local_pos: Vector2) -> Tile:
 	var map_pos = self.local_to_map(local_pos)
 	return self.map_to_scene_mat.get(str(map_pos))
 
-func set_tile(map_pos: Vector2i, tile_id: int, tile_type: Types.Tile):
+func set_tile(map_pos: Vector2i, tile_id: int, tile_type: Types.Tile) -> void:
 	self.set_cell(map_pos, Consts.TYPE_ATLAS[tile_type], Vector2i.ZERO, tile_id)
 
 func set_available_tile(map_pos: Vector2i):
 	self.set_cell(map_pos, 0, Vector2i.ZERO, 0)
+
+func remove_tile(map_pos: Vector2i):
+	self.set_cell(map_pos)
+	self.map_to_scene_mat.erase(str(map_pos))
+
+func is_pos_station(map_pos: Vector2i) -> bool:
+	var instance: Tile = map_to_scene_mat.get(str(map_pos))
+	return is_instance_valid(instance) and is_instance_of(instance, StationTile)

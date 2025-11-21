@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbprfyobu74dv"]
+
+[ext_resource type="Script" uid="uid://cmupk3kiw1oyc" path="res://scenes/GameManagers/FoodManager/food_manager.gd" id="1_nc27f"]
+
+[node name="FoodManager" type="Node"]
+script = ExtResource("1_nc27f")

@@ -13,6 +13,7 @@ font_size = 100
 
 [node name="LandCoin" type="Node2D"]
 script = ExtResource("1_f2phc")
+tile_type = 1
 metadata/_custom_type_script = "uid://cktvqrkjjsvl4"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

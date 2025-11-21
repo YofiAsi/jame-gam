@@ -30,5 +30,5 @@ const TYPE_ATLAS: Dictionary[Types.Tile, int] = {
 }
 
 const INIT_MONEY: int = 10
-const MEN_PRICE: int = 1
-const MAX_MEN_AMOUNT: int = 20
+const MAN_PRICE: int = 1
+const MAX_MEN_AMOUNT: int = 10

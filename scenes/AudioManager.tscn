@@ -100,6 +100,7 @@ stream = ExtResource("17_lp0i2")
 
 [node name="MusicGameJamLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_kuv82")
+parameters/looping = false
 
 [node name="UI" type="Node" parent="."]
 

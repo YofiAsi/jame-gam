@@ -128,7 +128,9 @@ func _on_night_start() -> void:
 	_call_guys_home()
 	spawn_demons_timer.start()
 	await spawn_demons_timer.timeout
-	portal_manager.start_spawning(10, world_map.map_to_local(Vector2i(game_raduis + 3, 0)).length())
+	
+	var demon_amount: int = 5 + (camps ** 2) * 5
+	portal_manager.start_spawning(demon_amount, world_map.map_to_local(Vector2i(game_raduis + 3, 0)).length())
 
 func _wake_guys() -> void:
 	for camp: Camp in get_tree().get_nodes_in_group("camp"):

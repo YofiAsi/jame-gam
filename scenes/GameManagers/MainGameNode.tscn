@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://connkatv77nua"]
+[gd_scene load_steps=38 format=3 uid="uid://connkatv77nua"]
 
 [ext_resource type="Script" uid="uid://ckhsbi6pvekwk" path="res://scenes/GameManagers/main_game_node.gd" id="1_d6v67"]
 [ext_resource type="Script" uid="uid://bf6whxbwsv0xs" path="res://scenes/GameManagers/portal_manager.gd" id="2_1cwct"]
@@ -57,6 +57,12 @@ shader_parameter/noise_offset = Vector2(0, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_43ytc"]
 
+[sub_resource type="Curve2D" id="Curve2D_4ire4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 40, 41, 0, 0, 0, 0, 36, 1025, 0, 0, 0, 0, 1856, 1023, 0, 0, 0, 0, 1856, 45, 0, 0, 0, 0, 42, 41)
+}
+point_count = 5
+
 [node name="MainGameNode" type="Node2D" groups=["game_node"]]
 script = ExtResource("1_d6v67")
 modulate_curve = SubResource("Curve_lfce0")
@@ -78,7 +84,7 @@ position = Vector2(181, -942)
 rotation = 3.105039
 
 [node name="SpawnTimer" type="Timer" parent="PortalManager"]
-wait_time = 0.2
+wait_time = 0.05
 one_shot = true
 
 [node name="TileManager" parent="." node_paths=PackedStringArray("world_map") instance=ExtResource("2_jnkpk")]
@@ -475,3 +481,10 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("PlaceholderTexture2D_43ytc")
 expand_mode = 2
+
+[node name="PathWarning" type="CanvasLayer" parent="."]
+
+[node name="WarningPath2D" type="Path2D" parent="PathWarning" groups=["warning_path"]]
+position = Vector2(-16.949451, -15.791674)
+scale = Vector2(1.0263736, 1.0436993)
+curve = SubResource("Curve2D_4ire4")

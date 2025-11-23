@@ -13,7 +13,7 @@ const COST: Dictionary[Types.Tile, int] = {
 var buttons: Dictionary[Types.Tile, SelectTextureButton]
 
 const land_camp_cost: int = 15
-const water_camp_cost: int = 30
+const water_camp_cost: int = 20
 
 @onready var buy_reg: SelectTextureButton = $VBoxContainer4/BuyReg
 @onready var buy_road: SelectTextureButton = $VBoxContainer/BuyRoad

@@ -10,22 +10,29 @@ var dead_demons: int = 0
 var target_demons: int = 0 
 var is_active: bool = false
 
+const MAX_SPAWN: int = 50
+
 func start_spawning(amount: int, radius: float = 0.0) -> void:
 	spawn_timer.start()
 	is_active = true
 	dead_demons = 0
 	target_demons = amount
+	var spawned: int = 0
 	
-	for _i in range(amount):
-		if spawn_timer.paused:
-			return
+	while spawned < amount:
+		#if spawn_timer.paused:
+			#return
 		
 		_spawn_demon(radius)
-		spawn_timer.start()
+		spawned += 1
 		
-		await spawn_timer.timeout
-		if spawn_timer.paused:
-			return
+		if spawned % MAX_SPAWN == 0:
+			spawn_timer.start(5)
+			await spawn_timer.timeout
+			
+		##
+		#if spawn_timer.paused:
+			#return
 
 func _spawn_demon(radius: float) -> void:
 	var point := Vector2.ZERO

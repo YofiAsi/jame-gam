@@ -7,6 +7,7 @@ signal dead()
 
 @onready var warning_icon: Sprite2D = $WarningIcon
 
+var warning_path: Path2D
 var camera: Camera
 
 var curr_hp: int = 1:
@@ -30,10 +31,13 @@ enum State {
 	DEAD
 }
 
+var targeted: bool = false
+
 func _ready() -> void:
 	_find_nearest_camp()
 	_get_next_camp()
 
+	warning_path = get_tree().get_first_node_in_group("warning_path")
 	camera = get_tree().get_first_node_in_group("camera")
 	animated_sprite_2d.animation_finished.connect(_on_animation_finished)
 	
@@ -104,8 +108,11 @@ func _no_camps_anymore() -> void:
 	_die()
 
 func _hit_camp() -> void:
-	curr_camp.camp_hitted()
-	_die()
+	if curr_state == State.DEAD:
+		return
+	if is_instance_valid(curr_camp):
+		curr_camp.camp_hitted()
+		_die()
 
 func _on_animation_finished() -> void:
 	if curr_state == State.SPAWN:
@@ -118,10 +125,10 @@ func _on_animation_finished() -> void:
 		return
 
 #func _update_warning_sign() -> void:
-	#var curve := camera.path_2d.curve
+	#var curve := warning_path.curve
 	#
-	#var local_pos := camera.path_2d.to_local(self.global_position)
+	#var local_pos := warning_path.to_local(self.global_position)
 	#var closest_local := curve.get_closest_point(local_pos)
-	#var closest_global := camera.path_2d.to_global(closest_local)
+	#var closest_global := warning_path.to_global(closest_local)
 #
-	#warning_icon.global_position = closest_global
+	#warning_icon.global_position = closest_global / camera.zoom.x

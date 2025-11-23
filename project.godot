@@ -27,6 +27,7 @@ FoodManager="*res://scenes/GameManagers/FoodManager/food_manager.gd"
 SceneManager="*res://addons/scene_manager/scene_manager.tscn"
 Scenes="*res://addons/scene_manager/scenes.gd"
 AudioManager="*res://scenes/AudioManager.tscn"
+SceneManagerOptions="*res://scenes/GameManagers/GameRoot/scene_manager_options.gd"
 
 [display]
 
@@ -47,6 +48,7 @@ guys_node=""
 demon_area=""
 game_root=""
 camera=""
+warning_path=""
 
 [input]
 

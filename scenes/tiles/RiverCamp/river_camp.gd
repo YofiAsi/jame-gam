@@ -44,6 +44,9 @@ func _set_agent_dest() -> void:
 
 func camp_hitted() -> void:
 	super.camp_hitted()
-	coin_tile.die()
-	shrine_tile.die()
-	self.die()
+	if is_instance_valid(coin_tile):
+		coin_tile.die()
+	if is_instance_valid(shrine_tile):
+		shrine_tile.die()
+	if is_instance_valid(self):
+		self.die()

@@ -34,9 +34,12 @@ func add_resource(amount: int) -> void:
 		CurrencyManager.add_money(amount)
 
 func _set_agent_dest() -> void:
-	self.navigation_agent_2d.target_position = food_tile.global_position
+	if is_instance_valid(food_tile):
+		self.navigation_agent_2d.target_position = food_tile.global_position
 
 func camp_hitted() -> void:
 	super.camp_hitted()
-	food_tile.die()
-	self.die()
+	if is_instance_valid(food_tile):
+		food_tile.die()
+	if is_instance_valid(self):
+		self.die()

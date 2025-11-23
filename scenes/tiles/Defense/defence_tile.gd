@@ -87,6 +87,8 @@ func _process(delta: float) -> void:
 				continue
 			var d: Demon = area.get_parent()
 			if is_instance_valid(d) and d.curr_state in [d.State.ATTACK, d.State.IDLE]:
+				if d.targeted:
+					continue
 				if closest_demon == null:
 					closest_demon = d
 					dist = global_position.distance_to(d.global_position)
@@ -102,6 +104,7 @@ func shoot_at(demon: Demon) -> void:
 		return
 
 	$AudioStreamPlayer.play()
+	demon.targeted = true
 
 	target_demon = demon
 	arrow_active = true

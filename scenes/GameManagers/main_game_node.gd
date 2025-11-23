@@ -27,13 +27,23 @@ var min_dis: int = 3:
 	set(value):
 		min_dis = value
 var max_dis: int = 4
-var camps: int = 0
+var camps: int = 0:
+	set(value):
+		camps = value
+		if value == 15:
+			win()
+		if value == 0:
+			if FoodManager.curr_food <= 0:
+				FoodManager.add_food(15)
 
 # night modulate vars
 var modulate_progress: float
 var current_color: Color = Color(1.0, 1.0, 1.0, 1.0)
 var target_color: Color = Color(1.0, 1.0, 1.0, 1.0)
 var spawn_land: bool = true
+
+func win() -> void:
+	AudioManager.crowd_applause.play()
 
 func _ready() -> void:
 	pause_button.pressed.connect(func(): 
@@ -135,6 +145,7 @@ func _on_night_start() -> void:
 func _wake_guys() -> void:
 	for camp: Camp in get_tree().get_nodes_in_group("camp"):
 		camp.wake_guys()
+	AudioManager.chicken_squawk.play()
 
 func _call_guys_home() -> void:
 	for guy: Man in guys_node.get_children():

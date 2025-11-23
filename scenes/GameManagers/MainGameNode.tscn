@@ -1,48 +1,173 @@
-[gd_scene load_steps=38 format=3 uid="uid://connkatv77nua"]
+[gd_scene load_steps=120 format=3 uid="uid://connkatv77nua"]
 
 [ext_resource type="Script" uid="uid://ckhsbi6pvekwk" path="res://scenes/GameManagers/main_game_node.gd" id="1_d6v67"]
 [ext_resource type="Script" uid="uid://bf6whxbwsv0xs" path="res://scenes/GameManagers/portal_manager.gd" id="2_1cwct"]
 [ext_resource type="PackedScene" uid="uid://bcfmnsofkiqrr" path="res://scenes/GameManagers/TileManager/TileManager.tscn" id="2_jnkpk"]
+[ext_resource type="Curve" uid="uid://cb73kq0be2llm" path="res://scenes/GameManagers/modulate_curve.tres" id="2_vm7bg"]
 [ext_resource type="PackedScene" uid="uid://cfjqmp12rhs65" path="res://scenes/characters/Demon/Demon.tscn" id="3_5rtb5"]
-[ext_resource type="Script" uid="uid://bsws70x373ot4" path="res://test/camera_2d.gd" id="4_1cwct"]
 [ext_resource type="PackedScene" uid="uid://dn86bsmhfehe7" path="res://scenes/WorldMap/WorldMap.tscn" id="5_5rtb5"]
 [ext_resource type="Script" uid="uid://cffsxppxbna0m" path="res://scenes/GameManagers/hud.gd" id="5_tfa6w"]
+[ext_resource type="Script" uid="uid://dcbjc4y83kf3i" path="res://scenes/GameManagers/camera_2d.gd" id="6_emn5t"]
 [ext_resource type="Script" uid="uid://g520lfferol1" path="res://ui/buttons/select_tile_button/select_tile_button.gd" id="7_lfce0"]
 [ext_resource type="Script" uid="uid://b5tp8ex7bskuj" path="res://scenes/GameManagers/buy_button_container.gd" id="8_43ytc"]
-[ext_resource type="Texture2D" uid="uid://btctsvl7jl3tl" path="res://scenes/tiles/RoadTile/sprites/Road_E icon.png" id="8_lfce0"]
-[ext_resource type="Texture2D" uid="uid://dp1d0o3ampsmj" path="res://assets/art/tiles/TileReg_2 icon.png" id="8_yv3pk"]
-[ext_resource type="Script" uid="uid://ca7xh6cx35xqt" path="res://test/money_label.gd" id="9_y4uli"]
+[ext_resource type="Texture2D" uid="uid://byh71g0b218ll" path="res://assets/new_cards/CardsNew3.png" id="9_701cs"]
 [ext_resource type="Script" uid="uid://rc6ytr4awkkt" path="res://scenes/GameManagers/food_label.gd" id="10_tpuus"]
-[ext_resource type="Texture2D" uid="uid://brhbgw83dltqy" path="res://scenes/tiles/RiverTile/sprites/River_E icon.png" id="10_yv3pk"]
 [ext_resource type="Script" uid="uid://cvktvjt5cnqnq" path="res://scenes/GameManagers/background.gd" id="11_jnkpk"]
 [ext_resource type="Shader" uid="uid://5oecyiajl222" path="res://shaders/background.gdshader" id="11_nj1lh"]
-[ext_resource type="Texture2D" uid="uid://byphyfn1l4vvq" path="res://scenes/tiles/Defense/TowerTile icon.png" id="12_y4uli"]
-[ext_resource type="Texture2D" uid="uid://cdmarruur2te6" path="res://scenes/tiles/LandCamp/CampTile ICON.png" id="15_4ire4"]
+[ext_resource type="Texture2D" uid="uid://dh2k2sbibxly6" path="res://assets/new_cards/CardsNew2.png" id="11_ug5h0"]
+[ext_resource type="Texture2D" uid="uid://m4exi83e3qbh" path="res://assets/new_cards/CardsNew4.png" id="12_abunf"]
+[ext_resource type="Texture2D" uid="uid://c8qp8i8qfqrp2" path="res://assets/new_cards/CardsNew5.png" id="13_xb3xt"]
+[ext_resource type="FontFile" uid="uid://cgdp7xg8nxqsf" path="res://assets/Friday Sunytime.otf" id="14_emn5t"]
+[ext_resource type="Texture2D" uid="uid://d3r8f64cprefu" path="res://assets/new_cards/CardsNew1.png" id="14_wr5sp"]
 [ext_resource type="Texture2D" uid="uid://cmef2iighphhw" path="res://assets/Ui/FoodLogo.png" id="16_802o0"]
-[ext_resource type="Texture2D" uid="uid://nnmmms01hk66" path="res://scenes/tiles/RiverCamp/WaterCampTile icon.png" id="16_lp2uu"]
+[ext_resource type="Texture2D" uid="uid://540lle4hcwy6" path="res://assets/art/demonfront/ArrowLast/ArrowLast_1.png" id="16_abunf"]
+[ext_resource type="Texture2D" uid="uid://cvubis3xfutfk" path="res://assets/art/demonfront/ArrowLast/ArrowLast_2.png" id="17_xb3xt"]
 [ext_resource type="Script" uid="uid://bs8mktln1ev4m" path="res://scenes/GameManagers/man_count.gd" id="18_0q2j1"]
 [ext_resource type="Texture2D" uid="uid://bghf1du417fny" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack1.png" id="18_2xk8y"]
 [ext_resource type="Texture2D" uid="uid://d3igahfln5k14" path="res://assets/Ui/CoinLogo.png" id="18_j6k6t"]
+[ext_resource type="Texture2D" uid="uid://b6v0rtc3nslhr" path="res://assets/art/demonfront/ArrowLast/ArrowLast_3.png" id="18_wr5sp"]
 [ext_resource type="Texture2D" uid="uid://q7ekm7hil3n5" path="res://assets/art/icons/MinionFront_icon.png" id="19_nj1lh"]
+[ext_resource type="Texture2D" uid="uid://cespsurcq57u4" path="res://assets/art/demonfront/ArrowLast/ArrowLast_4.png" id="19_r7oow"]
+[ext_resource type="Texture2D" uid="uid://327uswr4n4ro" path="res://assets/art/demonfront/ArrowLast/ArrowLast_5.png" id="20_hajdj"]
 [ext_resource type="Script" uid="uid://c7oala5bwgkxb" path="res://scenes/GameManagers/day_cycle_container.gd" id="20_y6wwc"]
 [ext_resource type="Script" uid="uid://ctskaxaf7lrw8" path="res://scenes/GameManagers/day_cycle_progress.gd" id="21_43ytc"]
 [ext_resource type="Script" uid="uid://j04sdeq7thw" path="res://scenes/GameManagers/guys.gd" id="21_nj1lh"]
+[ext_resource type="Texture2D" uid="uid://byhdrsaksbubv" path="res://assets/new_cards/CardsNew0.png" id="21_r7oow"]
+[ext_resource type="Texture2D" uid="uid://daowsp3mohm6d" path="res://assets/art/demonfront/ArrowLast/ArrowLast_6.png" id="21_wam0k"]
 [ext_resource type="Texture2D" uid="uid://b3s2mxmfptx3m" path="res://assets/Ui/SunUi.png" id="23_4ire4"]
+[ext_resource type="Texture2D" uid="uid://bd6c1qacyj7cp" path="res://assets/art/Ui_New/TimerBg.png" id="25_wx8dv"]
 [ext_resource type="Texture2D" uid="uid://glsvnrykg6ad" path="res://assets/Ui/Untitled_Artwork_86.png" id="27_j6k6t"]
+[ext_resource type="Script" uid="uid://cnce1st8whyq3" path="res://scenes/GameManagers/tutorial.gd" id="30_3l3ai"]
+[ext_resource type="Texture2D" uid="uid://bwst2h44duqvh" path="res://assets/art/Tutorial/fixed/Tutorial-1.png" id="32_wx8dv"]
+[ext_resource type="Texture2D" uid="uid://umb078o2l0cb" path="res://assets/art/Tutorial/fixed/Tutorial-2.png" id="33_bsy4i"]
+[ext_resource type="Texture2D" uid="uid://bfkyvleqbgqy6" path="res://assets/art/Tutorial/fixed/Tutorial-3.png" id="34_vm7bg"]
+[ext_resource type="Texture2D" uid="uid://bkfg0sv6vwcl2" path="res://assets/art/Tutorial/fixed/Tutorial-4.png" id="35_qorpr"]
+[ext_resource type="Texture2D" uid="uid://bk7mkijv4jwce" path="res://assets/art/Tutorial/fixed/Tutorial-5.png" id="36_ifbw5"]
+[ext_resource type="Texture2D" uid="uid://bld3qmo2a82r1" path="res://assets/art/Tutorial/fixed/Tutorial-6.png" id="37_701cs"]
+[ext_resource type="Texture2D" uid="uid://c6c3h76op855c" path="res://assets/art/Tutorial/fixed/Tutorial-7.png" id="38_ug5h0"]
+[ext_resource type="Texture2D" uid="uid://ddap0tt0p1mc2" path="res://assets/art/Tutorial/fixed/Tutorial-8.png" id="39_abunf"]
+[ext_resource type="Texture2D" uid="uid://356ipaf1w03a" path="res://assets/art/Tutorial/fixed/Tutorial-9.png" id="40_xb3xt"]
+[ext_resource type="Texture2D" uid="uid://phegn7g18i0" path="res://assets/art/Tutorial/fixed/Tutorial-10.png" id="41_r7oow"]
+[ext_resource type="Texture2D" uid="uid://b0ntnlj4mygx5" path="res://assets/art/Tutorial/Tutorial_Export-11.png" id="41_wr5sp"]
+[ext_resource type="Texture2D" uid="uid://b8h7qd8jjnx3y" path="res://assets/art/Tutorial/Tutorial_Export-12.png" id="42_r7oow"]
+[ext_resource type="Texture2D" uid="uid://c4nda0j5xnygp" path="res://assets/art/Tutorial/Tutorial_Export-13.png" id="43_hajdj"]
+[ext_resource type="Texture2D" uid="uid://bmk54h7gfgh8m" path="res://assets/art/Tutorial/Tutorial_Export-14.png" id="44_wam0k"]
+[ext_resource type="Texture2D" uid="uid://dr3p0u4mf5b04" path="res://assets/art/Tutorial/Tutorial_Export-15.png" id="45_ews1l"]
+[ext_resource type="Texture2D" uid="uid://2fbx4mor1ij0" path="res://assets/art/Tutorial/Tutorial_Export-16.png" id="46_6fkaw"]
+[ext_resource type="Texture2D" uid="uid://cpu84p4g5qh2n" path="res://assets/art/Tutorial/Tutorial_Export-17.png" id="47_rqp60"]
+[ext_resource type="Texture2D" uid="uid://cagrc3vl6m2jf" path="res://assets/art/Tutorial/Tutorial_Export-18.png" id="48_6156r"]
+[ext_resource type="Texture2D" uid="uid://ddxqp6p837gvh" path="res://assets/art/Tutorial/Tutorial_Export-19.png" id="49_f7dc0"]
+[ext_resource type="Texture2D" uid="uid://d1q422bfp56ys" path="res://assets/art/Tutorial/Tutorial_Export-20.png" id="50_7dum3"]
+[ext_resource type="Texture2D" uid="uid://butt8x1xpsq0" path="res://assets/art/Tutorial/Tutorial_Export-21.png" id="51_q35k7"]
+[ext_resource type="Texture2D" uid="uid://c580dong4s2kg" path="res://assets/art/Tutorial/Tutorial_Export-22.png" id="52_1n5af"]
+[ext_resource type="Texture2D" uid="uid://cl70jvjn87fqf" path="res://assets/art/Tutorial/Tutorial_Export-23.png" id="53_mtxi8"]
+[ext_resource type="Texture2D" uid="uid://d3i22tfma8ny3" path="res://assets/art/Tutorial/Tutorial_Export-24.png" id="54_roqg5"]
+[ext_resource type="Texture2D" uid="uid://7id77qu74jqi" path="res://assets/art/Tutorial/Tutorial_Export-25.png" id="55_u733h"]
+[ext_resource type="Texture2D" uid="uid://s13517kaqh7v" path="res://assets/art/Tutorial/Tutorial_Export-26.png" id="56_rtu4m"]
+[ext_resource type="Texture2D" uid="uid://da12k2p1jsrma" path="res://assets/art/Tutorial/Tutorial_Export-27.png" id="57_ab1kf"]
+[ext_resource type="Texture2D" uid="uid://cgyg0ygffq8t6" path="res://assets/art/Tutorial/Tutorial_Export-28.png" id="58_hlsvd"]
+[ext_resource type="Texture2D" uid="uid://bi3u85wu8fmb8" path="res://assets/art/Tutorial/Tutorial_Export-29.png" id="59_hldmn"]
+[ext_resource type="Texture2D" uid="uid://bthf0xlc8njas" path="res://assets/art/Tutorial/Tutorial_Export-30.png" id="60_5mkj6"]
+[ext_resource type="Texture2D" uid="uid://clpduxdd3h0xg" path="res://assets/art/Tutorial/Tutorial_Export-31.png" id="61_uwx6f"]
+[ext_resource type="Texture2D" uid="uid://bnjivqr3hu1d3" path="res://assets/art/Tutorial/Tutorial_Export-32.png" id="62_yp4ar"]
+[ext_resource type="Texture2D" uid="uid://kg40le3wm0p8" path="res://assets/art/Tutorial/Tutorial_Export-33.png" id="63_3yihi"]
+[ext_resource type="Texture2D" uid="uid://dxx7xq2bkf5dv" path="res://assets/art/Tutorial/Tutorial_Export-34.png" id="64_n5pnh"]
+[ext_resource type="Texture2D" uid="uid://3rahyxkeqw2l" path="res://assets/art/Tutorial/Tutorial_Export-35.png" id="65_cegp3"]
+[ext_resource type="Texture2D" uid="uid://bjr1uxuo60r0v" path="res://assets/art/Tutorial/Tutorial_Export-36.png" id="66_b4fru"]
+[ext_resource type="Texture2D" uid="uid://cwkw835wfv6ye" path="res://assets/art/Tutorial/Tutorial_Export-37.png" id="67_6oh6t"]
+[ext_resource type="Texture2D" uid="uid://1pxgatc21byd" path="res://assets/art/Tutorial/Tutorial_Export-38.png" id="68_sskfr"]
+[ext_resource type="Texture2D" uid="uid://cj88vfdo2qy5r" path="res://assets/art/Tutorial/Tutorial_Export-39.png" id="69_pknn0"]
+[ext_resource type="Texture2D" uid="uid://dunp666j162tt" path="res://assets/art/Tutorial/Tutorial_Export-40.png" id="70_c1lna"]
+[ext_resource type="Texture2D" uid="uid://c65xi48g7f67f" path="res://assets/art/Tutorial/Tutorial_Export-41.png" id="71_14gl4"]
+[ext_resource type="Texture2D" uid="uid://dpmct05akodnu" path="res://assets/art/Tutorial/Tutorial_Export-42.png" id="72_eayb5"]
+[ext_resource type="Texture2D" uid="uid://wrdn8epvtx60" path="res://assets/art/Tutorial/Tutorial_Export-43.png" id="73_ta7hc"]
+[ext_resource type="Texture2D" uid="uid://8wk1dir0aik1" path="res://assets/art/Tutorial/Tutorial_Export-44.png" id="74_ry4br"]
+[ext_resource type="Texture2D" uid="uid://836xqixgo6n1" path="res://assets/art/Tutorial/Tutorial_Export-45.png" id="75_6w3mv"]
+[ext_resource type="Texture2D" uid="uid://g65gcya4hdvk" path="res://assets/art/Tutorial/Tutorial_Export-46.png" id="76_nuyql"]
+[ext_resource type="Texture2D" uid="uid://hcwknde4l036" path="res://assets/art/Tutorial/Tutorial_Export-47.png" id="77_4lghq"]
+[ext_resource type="Texture2D" uid="uid://b8toaj0j7006p" path="res://assets/art/Tutorial/Tutorial_Export-48.png" id="78_luw7h"]
+[ext_resource type="Texture2D" uid="uid://cmwxjt7dnhfvy" path="res://assets/art/Tutorial/Tutorial_Export-49.png" id="79_km3qx"]
+[ext_resource type="Texture2D" uid="uid://ce5mm437rtrif" path="res://assets/art/Tutorial/Tutorial_Export-50.png" id="80_xskc1"]
+[ext_resource type="Texture2D" uid="uid://cf8od227ew0bi" path="res://assets/art/Tutorial/Tutorial_Export-51.png" id="81_lk8ro"]
+[ext_resource type="Texture2D" uid="uid://coh2tdwt7mbk6" path="res://assets/art/Tutorial/Tutorial_Export-52.png" id="82_ykw1y"]
+[ext_resource type="Texture2D" uid="uid://celm28m3das1q" path="res://assets/art/Tutorial/Tutorial_Export-53.png" id="83_85isj"]
+[ext_resource type="Texture2D" uid="uid://f6krl125uy8a" path="res://assets/art/Tutorial/Tutorial_Export-54.png" id="84_xist7"]
+[ext_resource type="Texture2D" uid="uid://c74mh22qu05f6" path="res://assets/art/Tutorial/Tutorial_Export-55.png" id="85_rw6hx"]
+[ext_resource type="Texture2D" uid="uid://ddj32la64w66g" path="res://assets/art/Tutorial/Tutorial_Export-56.png" id="86_r8o7n"]
+[ext_resource type="Texture2D" uid="uid://c7q56l51tmxtc" path="res://assets/art/Tutorial/Tutorial_Export-57.png" id="87_cgrro"]
+[ext_resource type="Texture2D" uid="uid://cmebgmo5bhrac" path="res://assets/art/Tutorial/Tutorial_Export-58.png" id="88_q3rot"]
+[ext_resource type="Texture2D" uid="uid://nphytyfkalxo" path="res://assets/art/Tutorial/Tutorial_Export-59.png" id="89_i4hjd"]
+[ext_resource type="Texture2D" uid="uid://mt8y80fx0fa1" path="res://assets/art/Tutorial/Tutorial_Export-60.png" id="90_otyiy"]
+[ext_resource type="Texture2D" uid="uid://dje4kuxbgseyb" path="res://assets/art/Tutorial/Tutorial_Export-61.png" id="91_dfpc8"]
+[ext_resource type="Texture2D" uid="uid://dpx2vesk14wke" path="res://assets/art/Tutorial/Tutorial_Export-62.png" id="92_y6eyx"]
+[ext_resource type="Texture2D" uid="uid://cud85easook61" path="res://assets/art/Tutorial/Tutorial_Export-63.png" id="93_afk18"]
+[ext_resource type="Texture2D" uid="uid://d3lq3xau26cst" path="res://assets/art/Tutorial/Tutorial_Export-64.png" id="94_513aa"]
+[ext_resource type="Texture2D" uid="uid://bm1dqdl0a0nee" path="res://assets/art/Tutorial/Tutorial_Export-65.png" id="95_5pykg"]
+[ext_resource type="Texture2D" uid="uid://dbacpqyksmtci" path="res://assets/art/Tutorial/Tutorial_Export-66.png" id="96_yiexy"]
+[ext_resource type="Texture2D" uid="uid://bon50jwfp3mcl" path="res://assets/art/Tutorial/Tutorial_Export-67.png" id="97_1qbyq"]
+[ext_resource type="Texture2D" uid="uid://cjf6n5d64fpcf" path="res://assets/art/Tutorial/Tutorial_Export-68.png" id="98_7fpjw"]
+[ext_resource type="AudioStream" uid="uid://cr0q18ule43xt" path="res://assets/Sound/asaf/light_switch.mp3" id="100_wx8dv"]
 
-[sub_resource type="Curve" id="Curve_lfce0"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+[sub_resource type="SpriteFrames" id="SpriteFrames_hajdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_abunf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xb3xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wr5sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_r7oow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hajdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wam0k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tdaqa"]
-font_size = 40
+font = ExtResource("14_emn5t")
+font_size = 50
+
+[sub_resource type="GDScript" id="GDScript_emn5t"]
+script/source = "extends Label
+
+func _ready() -> void:
+	CurrencyManager.currency_changed.connect(_update_money_label)
+	self.text = str(CurrencyManager.curr_money)
+	
+func _update_money_label(amount) -> void:
+	self.text = str(amount)
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_0q2j1"]
-font_size = 24
+font = ExtResource("14_emn5t")
+font_size = 50
 
-[sub_resource type="Theme" id="Theme_e3bb3"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx8dv"]
+texture = ExtResource("25_wx8dv")
+expand_margin_left = 15.0
+expand_margin_top = 7.0
+expand_margin_right = 16.0
+expand_margin_bottom = 8.0
 
-[sub_resource type="Curve" id="Curve_jnkpk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx8dv"]
+bg_color = Color(0, 0, 0, 0.654902)
+
+[sub_resource type="Theme" id="Theme_qorpr"]
+ProgressBar/styles/background = SubResource("StyleBoxTexture_wx8dv")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_wx8dv")
+
+[sub_resource type="Curve" id="Curve_bsy4i"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -63,9 +188,241 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_85yb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_wx8dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_bsy4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vm7bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_qorpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ifbw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_701cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ug5h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_abunf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_xb3xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_r7oow")
+}],
+"loop": true,
+"name": &"t1",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_wr5sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_r7oow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_hajdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_wam0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ews1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_6fkaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_rqp60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_6156r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_f7dc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_7dum3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_q35k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_1n5af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_mtxi8")
+}],
+"loop": true,
+"name": &"t2",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_roqg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_u733h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_rtu4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ab1kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_hlsvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_hldmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_5mkj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_uwx6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_yp4ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_3yihi")
+}],
+"loop": true,
+"name": &"t3",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_n5pnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_cegp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_b4fru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_6oh6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_sskfr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_pknn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_c1lna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_14gl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_eayb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ta7hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ry4br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_6w3mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_nuyql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_4lghq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_luw7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_km3qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_xskc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_lk8ro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ykw1y")
+}],
+"loop": true,
+"name": &"t4",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_85isj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_xist7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_rw6hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_r8o7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_cgrro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_q3rot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_i4hjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_otyiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_dfpc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_y6eyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_afk18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_513aa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_5pykg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_yiexy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_1qbyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_7fpjw")
+}],
+"loop": true,
+"name": &"t5",
+"speed": 6.0
+}]
+
 [node name="MainGameNode" type="Node2D" groups=["game_node"]]
 script = ExtResource("1_d6v67")
-modulate_curve = SubResource("Curve_lfce0")
+modulate_curve = ExtResource("2_vm7bg")
 
 [node name="WorldMap" parent="." instance=ExtResource("5_5rtb5")]
 position = Vector2(1, 0)
@@ -87,6 +444,10 @@ rotation = 3.105039
 wait_time = 0.05
 one_shot = true
 
+[node name="WaveTimer" type="Timer" parent="PortalManager"]
+wait_time = 5.0
+one_shot = true
+
 [node name="TileManager" parent="." node_paths=PackedStringArray("world_map") instance=ExtResource("2_jnkpk")]
 world_map = NodePath("../WorldMap")
 
@@ -94,7 +455,7 @@ world_map = NodePath("../WorldMap")
 zoom = Vector2(0.2, 0.2)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
-script = ExtResource("4_1cwct")
+script = ExtResource("6_emn5t")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 0
@@ -106,10 +467,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -859.0
-offset_top = -208.0
-offset_right = -23.0
-offset_bottom = -19.0
+offset_left = -938.0
+offset_top = -199.0
+offset_right = -18.0
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 alignment = 1
@@ -123,25 +484,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("8_yv3pk")
+texture_normal = ExtResource("9_701cs")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("7_lfce0")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer4"]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer4/HBoxContainer"]
-layout_mode = 2
-text = "0"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer4/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("18_j6k6t")
-expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
 layout_mode = 2
@@ -151,25 +497,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("8_lfce0")
+texture_normal = ExtResource("11_ug5h0")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("7_lfce0")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("18_j6k6t")
-expand_mode = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
 layout_mode = 2
@@ -179,26 +510,11 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("10_yv3pk")
+texture_normal = ExtResource("12_abunf")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("7_lfce0")
 tile_type = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-text = "1"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("18_j6k6t")
-expand_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
 layout_mode = 2
@@ -208,26 +524,11 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("12_y4uli")
+texture_normal = ExtResource("13_xb3xt")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("7_lfce0")
 tile_type = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer3/HBoxContainer"]
-layout_mode = 2
-text = "10"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer3/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("18_j6k6t")
-expand_mode = 2
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
 layout_mode = 2
@@ -237,26 +538,17 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("15_4ire4")
+texture_normal = ExtResource("14_wr5sp")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("7_lfce0")
 tile_type = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer5"]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer5/HBoxContainer"]
-layout_mode = 2
-text = "15"
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer5/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("16_802o0")
-expand_mode = 2
+[node name="ArrowBuy" type="AnimatedSprite2D" parent="HUD/BuyButtonContainer/VBoxContainer5/BuyLandCamp"]
+position = Vector2(4, -80)
+sprite_frames = SubResource("SpriteFrames_hajdj")
+autoplay = "default"
+frame_progress = 0.017459895
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
 layout_mode = 2
@@ -264,28 +556,12 @@ size_flags_horizontal = 3
 
 [node name="BuyWaterCamp" type="TextureButton" parent="HUD/BuyButtonContainer/VBoxContainer6"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("16_lp2uu")
+texture_normal = ExtResource("21_r7oow")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("7_lfce0")
 tile_type = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer6"]
-layout_mode = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer6/HBoxContainer"]
-layout_mode = 2
-text = "20 "
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer6/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("16_802o0")
-expand_mode = 2
 
 [node name="CurrencyCountContainer" type="VBoxContainer" parent="HUD"]
 anchors_preset = 1
@@ -336,7 +612,7 @@ text = "0"
 label_settings = SubResource("LabelSettings_tdaqa")
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("9_y4uli")
+script = SubResource("GDScript_emn5t")
 
 [node name="Control2" type="Control" parent="HUD/CurrencyCountContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(30, 0)
@@ -389,10 +665,10 @@ stretch_mode = 5
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = -120.0
-offset_right = 651.0
-offset_bottom = -27.0
+offset_left = 48.0
+offset_top = -143.0
+offset_right = 684.0
+offset_bottom = -50.0
 grow_vertical = 0
 script = ExtResource("20_y6wwc")
 
@@ -411,14 +687,14 @@ custom_minimum_size = Vector2(500, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = SubResource("Theme_e3bb3")
+theme = SubResource("Theme_qorpr")
 show_percentage = false
 script = ExtResource("21_43ytc")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -4
 script = ExtResource("11_jnkpk")
-curve = SubResource("Curve_jnkpk")
+curve = SubResource("Curve_bsy4i")
 
 [node name="TextureRect" type="TextureRect" parent="Background"]
 z_index = -100
@@ -483,8 +759,28 @@ texture = SubResource("PlaceholderTexture2D_43ytc")
 expand_mode = 2
 
 [node name="PathWarning" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="WarningPath2D" type="Path2D" parent="PathWarning" groups=["warning_path"]]
 position = Vector2(-16.949451, -15.791674)
 scale = Vector2(1.0263736, 1.0436993)
 curve = SubResource("Curve2D_4ire4")
+
+[node name="Tutorial" type="CanvasLayer" parent="." groups=["tutorial"]]
+visible = false
+script = ExtResource("30_3l3ai")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorial"]
+sprite_frames = SubResource("SpriteFrames_85yb2")
+animation = &"t1"
+frame_progress = 0.2505564
+centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Tutorial"]
+stream = ExtResource("100_wx8dv")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="Tutorial"]
+wait_time = 0.05
+one_shot = true

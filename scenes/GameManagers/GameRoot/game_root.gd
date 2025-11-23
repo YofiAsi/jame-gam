@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var main_game_node: MainGameNode = $MainGameNode
 @onready var pause_menu: CanvasLayer = $PauseMenu
-@onready var restart_button: Button = $PauseMenu/VBoxContainer/VBoxContainer/RestartButton
+@onready var restart_button: TextureButton = $PauseMenu/VBoxContainer/VBoxContainer/RestartButton
 
 var curr_state: State = State.IN_GAME
 enum State {
@@ -13,7 +13,11 @@ enum State {
 func _ready() -> void:
 	pause_menu.hide()
 	restart_button.pressed.connect(func():
-		SceneManager.reset_scene_manager()
+		_unpause()
+		SceneManager.reload_scene({
+			"pattern_enter": "squares",
+			"pattern_leave": "squares",
+		})
 	)
 
 func _input(event: InputEvent) -> void:

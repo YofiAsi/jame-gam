@@ -4,8 +4,9 @@ signal food_updated(amount: int)
 
 var curr_food: int = 15:
 	set(value):
-		curr_food = value
+		curr_food = max(value, 0)
 		food_updated.emit(curr_food)
+		
 
 func add_food(amount) -> void:
 	curr_food += amount

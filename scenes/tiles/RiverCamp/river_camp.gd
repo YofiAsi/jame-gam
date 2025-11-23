@@ -28,15 +28,11 @@ func _add_man() -> void:
 	cur_men_amount += 1
 
 func add_resource(amount: int) -> void:
-	if is_instance_valid(food_tile):
-		FoodManager.add_food(amount)
-		
-	else:
+	if is_instance_valid(shrine_tile):
 		CurrencyManager.add_money(amount)
-		if is_instance_valid(shrine_tile):
-			var animation_node: PlusNode = PLUS_ANIMATION.instantiate()
-			shrine_tile.add_child(animation_node)
-			animation_node.texture_rect.texture = COIN_LOGO
+		var animation_node: PlusNode = PLUS_ANIMATION.instantiate()
+		shrine_tile.add_child(animation_node)
+		animation_node.texture_rect.texture = COIN_LOGO
 
 func _set_agent_dest() -> void:
 	if is_instance_valid(coin_tile):

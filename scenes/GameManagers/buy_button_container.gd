@@ -5,8 +5,8 @@ signal buy_camp(land: bool, cost: int)
 
 const COST: Dictionary[Types.Tile, int] = {
 	Types.Tile.GRASS: 0,
-	Types.Tile.ROAD_TILE: 1,
-	Types.Tile.WATER_TILE: 1,
+	Types.Tile.ROAD_TILE: 0,
+	Types.Tile.WATER_TILE: 0,
 	Types.Tile.CANYON_TILE: 10,
 }
 
@@ -21,6 +21,7 @@ const water_camp_cost: int = 20
 @onready var buy_tower: SelectTextureButton = $VBoxContainer3/BuyTower
 @onready var buy_land_camp: SelectTextureButton = $VBoxContainer5/BuyLandCamp
 @onready var buy_water_camp: SelectTextureButton = $VBoxContainer6/BuyWaterCamp
+@onready var arrow_buy: AnimatedSprite2D = $VBoxContainer5/BuyLandCamp/ArrowBuy
 
 var curr_buy: Types.Tile = Types.Tile.ROAD_TILE:
 	set(value):
@@ -28,6 +29,11 @@ var curr_buy: Types.Tile = Types.Tile.ROAD_TILE:
 		_update_buttons_color()
 
 func _ready() -> void:
+	var tutorial: Tutorial = get_tree().get_first_node_in_group("tutorial")
+	arrow_buy.hide()
+	if is_instance_valid(tutorial):
+		tutorial.finished.connect(func(): arrow_buy.show())
+	
 	buttons = {
 		Types.Tile.GRASS: buy_reg,
 		Types.Tile.ROAD_TILE: buy_road,
@@ -38,11 +44,15 @@ func _ready() -> void:
 	for type in buttons.keys():
 		buttons[type].pressed.connect(func(): curr_buy = type)
 		buttons[type].pressed_texture.connect(func(tile_type):
+			AudioManager.button_press.play(0.09)
 			change_curr_tile.emit(tile_type, COST[tile_type])
 		)
 	
 	_update_buttons_color()
-	buy_land_camp.pressed.connect(func(): buy_camp.emit(true, land_camp_cost))
+	buy_land_camp.pressed.connect(func(): 
+		buy_camp.emit(true, land_camp_cost)
+		arrow_buy.hide()
+	)
 	buy_water_camp.pressed.connect(func(): buy_camp.emit(false, water_camp_cost))
 	
 	DayCycleManager.night_started.connect(hide)

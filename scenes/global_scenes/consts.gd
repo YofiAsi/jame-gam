@@ -76,7 +76,7 @@ const STATIONS: Dictionary[String, PackedScene] = {
 	"river_food": preload("uid://d22lfevmi4lgq"),
 }
 
-const INIT_MONEY: int = 20
+const INIT_MONEY: int = 0
 const MAN_PRICE: int = 1
 const MAX_MEN_AMOUNT: int = 10
 

@@ -30,8 +30,6 @@ func add_resource(amount: int) -> void:
 	if is_instance_valid(food_tile):
 		FoodManager.add_food(amount)
 		add_child(PLUS_ANIMATION.instantiate())
-	else:
-		CurrencyManager.add_money(amount)
 
 func _set_agent_dest() -> void:
 	if is_instance_valid(food_tile):

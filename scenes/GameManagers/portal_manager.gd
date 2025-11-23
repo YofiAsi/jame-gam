@@ -5,6 +5,7 @@ extends Node2D
 @export var demons_node: Node2D
 
 @onready var spawn_timer: Timer = $SpawnTimer
+@onready var wave_timer: Timer = $WaveTimer
 
 var dead_demons: int = 0
 var target_demons: int = 0 
@@ -12,11 +13,13 @@ var is_active: bool = false
 
 const MAX_SPAWN: int = 50
 
+var wave_count := 1
+
 func start_spawning(amount: int, radius: float = 0.0) -> void:
-	spawn_timer.start()
 	is_active = true
 	dead_demons = 0
 	target_demons = amount
+	wave_count = 1
 	var spawned: int = 0
 	
 	while spawned < amount:
@@ -24,15 +27,15 @@ func start_spawning(amount: int, radius: float = 0.0) -> void:
 			#return
 		
 		_spawn_demon(radius)
+		spawn_timer.start()
 		spawned += 1
+		if wave_count % 3 != 0:
+			await spawn_timer.timeout
 		
 		if spawned % MAX_SPAWN == 0:
-			spawn_timer.start(5)
-			await spawn_timer.timeout
-			
-		##
-		#if spawn_timer.paused:
-			#return
+			wave_timer.start(8)
+			await wave_timer.timeout
+			wave_count += 1
 
 func _spawn_demon(radius: float) -> void:
 	var point := Vector2.ZERO

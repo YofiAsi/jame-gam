@@ -1,92 +1,92 @@
-[gd_scene load_steps=5 format=3 uid="uid://b10ksjfsi5pr0"]
+[gd_scene load_steps=10 format=3 uid="uid://b10ksjfsi5pr0"]
 
 [ext_resource type="Script" uid="uid://d24vy2vppwxjf" path="res://scenes/main_menu/main_menu.gd" id="1_isws5"]
-[ext_resource type="Texture2D" uid="uid://cb20js4p6o6ct" path="res://assets/Ui/Startscreen.png" id="2_axelx"]
+[ext_resource type="Texture2D" uid="uid://gr8mjrx5g4ks" path="res://assets/Start_Bg_3.png" id="2_arvcj"]
+[ext_resource type="FontFile" uid="uid://cgdp7xg8nxqsf" path="res://assets/Friday Sunytime.otf" id="2_oitky"]
+[ext_resource type="Texture2D" uid="uid://fwtior5v2d6o" path="res://scenes/main_menu/StartButton.png" id="3_qmweu"]
+[ext_resource type="Texture2D" uid="uid://dw2uno1n5o8l6" path="res://scenes/main_menu/StartButton - Hover.png" id="4_f1mbi"]
+[ext_resource type="Script" uid="uid://ctudolhbatxxf" path="res://scenes/main_menu/start_button.gd" id="5_oitky"]
+[ext_resource type="AudioStream" uid="uid://b1bv74dj3y6lh" path="res://assets/Sound/asaf/tick_sound.mp3" id="6_wckin"]
+[ext_resource type="AudioStream" uid="uid://cr0q18ule43xt" path="res://assets/Sound/asaf/light_switch.mp3" id="7_arvcj"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_axelx"]
-font_size = 100
-outline_size = 50
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_xr86y"]
-font_size = 30
-outline_size = 15
+[sub_resource type="LabelSettings" id="LabelSettings_wckin"]
+font = ExtResource("2_oitky")
+font_size = 49
+outline_size = 20
 outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_isws5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 0
+layer = -1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0.4117647)
+modulate = Color(1, 1, 1, 0.8901961)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_axelx")
+texture = ExtResource("2_arvcj")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Title" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -296.0
-offset_top = 101.0
-offset_right = 296.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-
-[node name="Label" type="Label" parent="CanvasLayer/Title"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Simple Guys"
-label_settings = SubResource("LabelSettings_axelx")
-
-[node name="Label2" type="Label" parent="CanvasLayer/Title"]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-text = "By Sgalgal, Sen6ble and YofiAsi"
-label_settings = SubResource("LabelSettings_xr86y")
-vertical_alignment = 1
-
 [node name="Title2" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 13
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -295.0
-offset_top = 667.0
-offset_right = 295.0
+offset_left = -143.0
+offset_top = -418.0
+offset_right = 143.0
+offset_bottom = -11.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 
-[node name="StartButton" type="Button" parent="CanvasLayer/Title2"]
-custom_minimum_size = Vector2(0, 70)
+[node name="StartButton" type="TextureButton" parent="CanvasLayer/Title2"]
+custom_minimum_size = Vector2(0, 103.35)
 layout_mode = 2
-text = "Start"
+texture_normal = ExtResource("3_qmweu")
+texture_hover = ExtResource("4_f1mbi")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("5_oitky")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Title2"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Title2/StartButton"]
+stream = ExtResource("6_wckin")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="CanvasLayer/Title2/StartButton"]
+stream = ExtResource("7_arvcj")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+z_index = 1
 custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
+offset_top = 35.0
+offset_right = 221.0
+offset_bottom = 233.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Title2/HBoxContainer"]
+[node name="VolumeSlider" type="VSlider" parent="CanvasLayer/HBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
 text = "Volume"
+label_settings = SubResource("LabelSettings_wckin")
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VolumeSlider" type="HSlider" parent="CanvasLayer/Title2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-
+[connection signal="mouse_entered" from="CanvasLayer/Title2/StartButton" to="CanvasLayer/Title2/StartButton" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Title2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Title2/StartButton" to="CanvasLayer/Title2/StartButton" method="_on_pressed"]

@@ -1,16 +1,19 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8epcsp8b5ot"]
+[gd_scene load_steps=25 format=3 uid="uid://c8epcsp8b5ot"]
 
 [ext_resource type="AudioStream" uid="uid://jqaxikjtrh4r" path="res://assets/Sound/Wind_Ambient_loopable.mp3" id="1_hux41"]
 [ext_resource type="Script" uid="uid://bdjbh4jcp0mcp" path="res://scenes/audio_manager.gd" id="1_kuv82"]
 [ext_resource type="AudioStream" uid="uid://c0evogvo6gn8c" path="res://assets/Sound/Demon_click.mp3" id="1_wk67d"]
 [ext_resource type="AudioStream" uid="uid://caduxxe4w4th6" path="res://assets/Sound/Map_Hover.mp3" id="2_lp0i2"]
+[ext_resource type="AudioStream" uid="uid://capapmdvfnmkc" path="res://assets/Sound/asaf/CrowdApplause_BW.15914.wav" id="2_welk2"]
 [ext_resource type="AudioStream" uid="uid://xtf7m7k2pn5s" path="res://assets/Sound/Tiles_Boogle.mp3" id="3_kuv82"]
+[ext_resource type="AudioStream" uid="uid://c63nccjcr1h8u" path="res://assets/Sound/asaf/ESM_FG_animal_one_shot_bird_rooster_chicken_squawk_distant_barn_int.wav" id="3_lmqos"]
 [ext_resource type="AudioStream" uid="uid://de8vrwaccy55k" path="res://assets/Sound/Tiles_Hover.mp3" id="4_nqh3p"]
 [ext_resource type="AudioStream" uid="uid://bwv71aufk5pn7" path="res://assets/Sound/Tiles_places_1.mp3" id="5_guu55"]
 [ext_resource type="AudioStream" uid="uid://hqvv7kuu124c" path="res://assets/Sound/Tiles_places_2.mp3" id="6_welk2"]
 [ext_resource type="AudioStream" uid="uid://j5jjfe0wftbn" path="res://assets/Sound/Tiles_places_3.mp3" id="7_lmqos"]
 [ext_resource type="AudioStream" uid="uid://dav8xm1vx24vh" path="res://assets/Sound/Tiles_Select-grab.mp3" id="8_o56bu"]
 [ext_resource type="AudioStream" uid="uid://v3g0ui2jrdss" path="res://assets/Sound/Campfire.mp3" id="10_d8q4o"]
+[ext_resource type="AudioStream" uid="uid://cr0q18ule43xt" path="res://assets/Sound/asaf/light_switch.mp3" id="10_nqh3p"]
 [ext_resource type="AudioStream" uid="uid://bonh3hg6754cl" path="res://assets/Sound/Footsteps_loopable.mp3" id="11_gjdu5"]
 [ext_resource type="AudioStream" uid="uid://dvdha65ifjrt0" path="res://assets/Sound/Night_ambient.mp3" id="12_rxh72"]
 [ext_resource type="AudioStream" uid="uid://fg46e7r0a01x" path="res://assets/Sound/tower_zap.mp3" id="13_lqo3f"]
@@ -18,17 +21,27 @@
 [ext_resource type="AudioStream" uid="uid://kut3wfrt4j2a" path="res://assets/Sound/Demon_kill.mp3" id="15_bayib"]
 [ext_resource type="AudioStream" uid="uid://cnnwgviqgvfbv" path="res://assets/Sound/Prayer_collected.mp3" id="16_nrd24"]
 [ext_resource type="AudioStream" uid="uid://dmpxjrsxkm04g" path="res://assets/Sound/Slider-Thick.mp3" id="18_acs0d"]
-[ext_resource type="AudioStream" uid="uid://bhgrbkcc04gyl" path="res://assets/Music/intro.wav" id="18_kuv82"]
-[ext_resource type="AudioStream" uid="uid://mjxkmvu7swtt" path="res://assets/Music/music_loop.wav" id="19_kuv82"]
+[ext_resource type="AudioStream" uid="uid://cmc4fbm7wmt2i" path="res://assets/Sound/asaf/Music game jam INTRO.mp3" id="19_nqh3p"]
+[ext_resource type="AudioStream" uid="uid://d32s35pb3b3xo" path="res://assets/Sound/asaf/Music game jam LOOP.mp3" id="20_guu55"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_kuv82"]
 fade_time = 0.0
 stream_count = 2
-stream_0 = ExtResource("18_kuv82")
-stream_1 = ExtResource("19_kuv82")
+stream_0 = ExtResource("19_nqh3p")
+stream_1 = ExtResource("20_guu55")
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_kuv82")
+
+[node name="CrowdApplauseBw_15914" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_welk2")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="EsmFgAnimalOneShotBirdRoosterChickenSquawkDistantBarnInt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lmqos")
+volume_db = -15.0
+bus = &"SFX"
 
 [node name="PlayerAction" type="Node" parent="."]
 
@@ -63,6 +76,11 @@ bus = &"PlayerAction"
 [node name="TilesSelectGrab" type="AudioStreamPlayer" parent="PlayerAction"]
 stream = ExtResource("8_o56bu")
 bus = &"PlayerAction"
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="PlayerAction"]
+stream = ExtResource("10_nqh3p")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="Ambience" type="Node" parent="."]
 

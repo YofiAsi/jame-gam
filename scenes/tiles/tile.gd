@@ -23,6 +23,8 @@ func set_texture(texture: Texture) -> void:
 func _on_mouse_entered() -> void:
 	if Input.is_action_pressed("click"):
 		tile_pressed.emit(self)
+	if Input.is_action_pressed("right_click"):
+		tile_secondary_pressed.emit(self)
 
 func _on_mouse_exited() -> void:
 	pass

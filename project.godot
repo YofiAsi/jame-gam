@@ -24,16 +24,16 @@ Consts="*res://scenes/global_scenes/consts.gd"
 CurrencyManager="*res://scenes/GameManagers/CurrencyManager/currency_manager.gd"
 DayCycleManager="*res://scenes/GameManagers/day_cycle_manager.gd"
 FoodManager="*res://scenes/GameManagers/FoodManager/food_manager.gd"
-SceneManager="*res://addons/scene_manager/scene_manager.tscn"
-Scenes="*res://addons/scene_manager/scenes.gd"
 AudioManager="*res://scenes/AudioManager.tscn"
 SceneManagerOptions="*res://scenes/GameManagers/GameRoot/scene_manager_options.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://bdw66o0cufxks"
 
 [editor_plugins]
 
@@ -49,6 +49,7 @@ demon_area=""
 game_root=""
 camera=""
 warning_path=""
+tutorial=""
 
 [input]
 

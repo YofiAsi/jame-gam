@@ -23,6 +23,10 @@ extends Node
 @onready var main_song: AudioStreamPlayer = $Music/MainSong
 @onready var ui: Node = $UI
 @onready var slider_thick: AudioStreamPlayer = $UI/SliderThick
+@onready var button_press: AudioStreamPlayer = $PlayerAction/ButtonPress
+
+@onready var crowd_applause: AudioStreamPlayer = $CrowdApplauseBw_15914
+@onready var chicken_squawk: AudioStreamPlayer = $EsmFgAnimalOneShotBirdRoosterChickenSquawkDistantBarnInt
 
 func _ready() -> void:
 	pass

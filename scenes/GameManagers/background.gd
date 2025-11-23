@@ -22,8 +22,8 @@ func _ready() -> void:
 
 func switch_night() -> void:
 	self.progress = 0.0
-	target_color0 = Color(0.13, 0.204, 0.43, 1.0)
-	target_color1 = Color(0.07, 0.15, 0.393, 1.0)
+	target_color0 = Color("21346eff")
+	target_color1 = Color("122664ff")
 
 func switch_day() -> void:
 	self.progress = 0.0

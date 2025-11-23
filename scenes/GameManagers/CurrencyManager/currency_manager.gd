@@ -5,7 +5,7 @@ signal buy_declined()
 
 var curr_money: int = Consts.INIT_MONEY:
 	set(value):
-		curr_money = value
+		curr_money = max(value, 0)
 		currency_changed.emit(curr_money)
 
 func add_money(amount: int) -> void:

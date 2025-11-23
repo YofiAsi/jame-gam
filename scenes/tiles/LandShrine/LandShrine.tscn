@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2kj5ipk2os4x"]
+[gd_scene load_steps=5 format=3 uid="uid://d2kj5ipk2os4x"]
 
 [ext_resource type="Script" uid="uid://de8t35ho4sl2b" path="res://scenes/tiles/LandShrine/land_shrine.gd" id="1_rp8sf"]
 [ext_resource type="Texture2D" uid="uid://cxtaftafojfdq" path="res://scenes/tiles/LandShrine/Screenshot 2025-11-09 212355.png" id="2_q5yeu"]
+[ext_resource type="Script" uid="uid://cj2m55x4nf8ms" path="res://scenes/tiles/circle.gd" id="3_p8u5i"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q5yeu"]
 vertices = PackedVector2Array(170.88281, -47.023438, -1.9921875, 89.25781, -181.50781, -52.703125, -2.2265625, -184.40625)
@@ -47,3 +48,9 @@ end_position = Vector2(-92, -108)
 bidirectional = false
 start_position = Vector2(232, 118)
 end_position = Vector2(85, 6)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-4, -370)
+
+[node name="Circle" type="Node2D" parent="."]
+script = ExtResource("3_p8u5i")

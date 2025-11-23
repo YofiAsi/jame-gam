@@ -1,0 +1,183 @@
+[gd_scene load_steps=23 format=3 uid="uid://connkatv77nua"]
+
+[ext_resource type="Script" uid="uid://ckhsbi6pvekwk" path="res://scenes/GameManagers/main_game_node.gd" id="1_d6v67"]
+[ext_resource type="Script" uid="uid://bf6whxbwsv0xs" path="res://scenes/GameManagers/portal_manager.gd" id="2_1cwct"]
+[ext_resource type="PackedScene" uid="uid://bcfmnsofkiqrr" path="res://scenes/GameManagers/TileManager/TileManager.tscn" id="2_jnkpk"]
+[ext_resource type="PackedScene" uid="uid://cfjqmp12rhs65" path="res://scenes/characters/Demon/Demon.tscn" id="3_5rtb5"]
+[ext_resource type="Script" uid="uid://bsws70x373ot4" path="res://test/camera_2d.gd" id="4_1cwct"]
+[ext_resource type="PackedScene" uid="uid://dn86bsmhfehe7" path="res://scenes/WorldMap/WorldMap.tscn" id="5_5rtb5"]
+[ext_resource type="Script" uid="uid://cffsxppxbna0m" path="res://scenes/GameManagers/hud.gd" id="5_tfa6w"]
+[ext_resource type="Script" uid="uid://g520lfferol1" path="res://ui/buttons/select_tile_button/select_tile_button.gd" id="7_lfce0"]
+[ext_resource type="Texture2D" uid="uid://djby6uctae442" path="res://scenes/tiles/RoadTile/sprites/Road_E.png" id="8_lfce0"]
+[ext_resource type="Script" uid="uid://ca7xh6cx35xqt" path="res://test/money_label.gd" id="9_y4uli"]
+[ext_resource type="Script" uid="uid://b3uvifrij30ry" path="res://scenes/GameManagers/day_count.gd" id="10_tfa6w"]
+[ext_resource type="Script" uid="uid://rc6ytr4awkkt" path="res://scenes/GameManagers/food_label.gd" id="10_tpuus"]
+[ext_resource type="Texture2D" uid="uid://b2shll0ml6xrt" path="res://scenes/tiles/RiverTile/sprites/River_E.png" id="10_yv3pk"]
+[ext_resource type="Script" uid="uid://cvktvjt5cnqnq" path="res://scenes/GameManagers/background.gd" id="11_jnkpk"]
+[ext_resource type="Texture2D" uid="uid://bqbcuahrfuoq6" path="res://scenes/tiles/Defense/TowerTile.png" id="11_lfce0"]
+[ext_resource type="Shader" uid="uid://5oecyiajl222" path="res://shaders/background.gdshader" id="11_nj1lh"]
+[ext_resource type="Script" uid="uid://bewgagu2rtais" path="res://scenes/GameManagers/time_counter.gd" id="14_d628t"]
+
+[sub_resource type="Curve" id="Curve_tpuus"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_tdaqa"]
+font_size = 40
+
+[sub_resource type="Curve" id="Curve_jnkpk"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6wwc"]
+shader = ExtResource("11_nj1lh")
+shader_parameter/color0 = Color(0.53, 0.81, 0.92, 1)
+shader_parameter/color1 = Color(0.27, 0.58, 0.8, 1)
+shader_parameter/camera_position = Vector2(0, 0)
+shader_parameter/camera_scale = 1.0
+shader_parameter/noise_frequency = 0.004
+shader_parameter/noise_offset = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_43ytc"]
+
+[node name="MainGameNode" type="Node2D" groups=["game_node"]]
+script = ExtResource("1_d6v67")
+modulate_curve = SubResource("Curve_tpuus")
+
+[node name="WorldMap" parent="." instance=ExtResource("5_5rtb5")]
+
+[node name="PortalManager" type="Node2D" parent="." node_paths=PackedStringArray("demons_node")]
+script = ExtResource("2_1cwct")
+demon_scene = ExtResource("3_5rtb5")
+demons_node = NodePath("../Demons")
+
+[node name="Path2D" type="Path2D" parent="PortalManager"]
+position = Vector2(-2941.5654, -1179.879)
+scale = Vector2(3.3847308, 3.331579)
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PortalManager/Path2D"]
+position = Vector2(181, -942)
+rotation = 3.105039
+
+[node name="SpawnTimer" type="Timer" parent="PortalManager"]
+wait_time = 0.2
+one_shot = true
+
+[node name="TileManager" parent="." node_paths=PackedStringArray("world_map") instance=ExtResource("2_jnkpk")]
+world_map = NodePath("../WorldMap")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.2, 0.2)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("4_1cwct")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+layer = 0
+script = ExtResource("5_tfa6w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -365.0
+offset_top = -178.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureButton4" type="TextureButton" parent="HUD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("8_lfce0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+
+[node name="TextureButton9" type="TextureButton" parent="HUD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("10_yv3pk")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+tile_type = 1
+
+[node name="TextureButton10" type="TextureButton" parent="HUD/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("11_lfce0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+tile_type = 2
+
+[node name="Coin" type="Label" parent="HUD"]
+offset_left = 302.0
+offset_top = 75.0
+offset_right = 342.0
+offset_bottom = 130.0
+text = "0"
+label_settings = SubResource("LabelSettings_tdaqa")
+script = ExtResource("9_y4uli")
+
+[node name="Food" type="Label" parent="HUD"]
+offset_left = 531.0
+offset_top = 66.0
+offset_right = 571.0
+offset_bottom = 121.0
+text = "0"
+label_settings = SubResource("LabelSettings_tdaqa")
+script = ExtResource("10_tpuus")
+
+[node name="DayCount" type="Label" parent="HUD"]
+offset_top = 1044.0
+offset_right = 40.0
+offset_bottom = 1067.0
+text = "1"
+script = ExtResource("10_tfa6w")
+
+[node name="TimeCounter" type="Label" parent="HUD"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("14_d628t")
+
+[node name="Button" type="Button" parent="HUD"]
+offset_left = 252.0
+offset_top = 285.0
+offset_right = 303.0
+offset_bottom = 316.0
+text = "AAAA"
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -4
+script = ExtResource("11_jnkpk")
+curve = SubResource("Curve_jnkpk")
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
+z_index = -100
+material = SubResource("ShaderMaterial_y6wwc")
+offset_left = -25.0
+offset_top = -35.0
+offset_right = 1945.0
+offset_bottom = 1118.0
+texture = SubResource("PlaceholderTexture2D_43ytc")
+expand_mode = 2
+
+[node name="Guys" type="Node2D" parent="." groups=["guys_node"]]
+
+[node name="Demons" type="Node2D" parent="."]
+
+[node name="SpawnCampTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SpawnDemonsTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="HUD/Button" to="." method="_on_button_pressed"]

@@ -1,12 +1,194 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf1eiy0ygwiga"]
+[gd_scene load_steps=37 format=3 uid="uid://cf1eiy0ygwiga"]
 
 [ext_resource type="Script" uid="uid://bs0jps5qsisbq" path="res://scenes/characters/Boat/boat.gd" id="1_kckb5"]
 [ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="2_x3gxx"]
+[ext_resource type="Texture2D" uid="uid://bgxee7hr2538" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryBack/minionBoatCarryBack0.png" id="3_t3hab"]
+[ext_resource type="Texture2D" uid="uid://dm7q31xumeuf1" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryBack/minionBoatCarryBack1.png" id="4_y8pin"]
+[ext_resource type="Texture2D" uid="uid://b54g8rvrrs6pb" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryBack/minionBoatCarryBack2.png" id="5_385bc"]
+[ext_resource type="Texture2D" uid="uid://cc3p0ushkyq6c" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryBack/minionBoatCarryBack3.png" id="6_x8q2x"]
+[ext_resource type="Texture2D" uid="uid://cro7umcfmv6qf" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryBack/minionBoatCarryBack4.png" id="7_qpe1n"]
+[ext_resource type="Texture2D" uid="uid://b428vs53bv4gt" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryBack/minionBoatCarryBack5.png" id="8_4uf04"]
+[ext_resource type="Texture2D" uid="uid://cwrvoyfuxaga" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryBack/minionBoatCarryBack6.png" id="9_fu5m5"]
+[ext_resource type="Texture2D" uid="uid://bjwaslkrvk1t3" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryBack/minionBoatCarryBack7.png" id="10_u1nnr"]
+[ext_resource type="Texture2D" uid="uid://6wppdk86m5c2" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryFront/minionBoatCarryFront0.png" id="11_165mf"]
+[ext_resource type="Texture2D" uid="uid://ca1wi63jr0bnp" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryFront/minionBoatCarryFront1.png" id="12_fbcax"]
+[ext_resource type="Texture2D" uid="uid://3f7gyn8oh16x" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryFront/minionBoatCarryFront2.png" id="13_ljc6f"]
+[ext_resource type="Texture2D" uid="uid://cwttfrmvqm0fh" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryFront/minionBoatCarryFront3.png" id="14_oyfno"]
+[ext_resource type="Texture2D" uid="uid://drnr6mrx80h1i" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryFront/minionBoatCarryFront4.png" id="15_32i7h"]
+[ext_resource type="Texture2D" uid="uid://batn4ctcholfr" path="res://scenes/characters/Boat/MinionBoat/minionBoatCarryFront/minionBoatCarryFront5.png" id="16_qepkp"]
+[ext_resource type="Texture2D" uid="uid://bcfxyiuqmlmdp" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack.png" id="17_kkny7"]
+[ext_resource type="Texture2D" uid="uid://bghf1du417fny" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack1.png" id="18_ul6t8"]
+[ext_resource type="Texture2D" uid="uid://bqtvemhs8yyos" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack2.png" id="19_j4o06"]
+[ext_resource type="Texture2D" uid="uid://bj1hy1qlyp16k" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack4.png" id="20_4fime"]
+[ext_resource type="Texture2D" uid="uid://cf44otsgkuruj" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack3.png" id="20_385bc"]
+[ext_resource type="Texture2D" uid="uid://b3ch7i0lpvli5" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack5.png" id="21_ettfw"]
+[ext_resource type="Texture2D" uid="uid://be3mc3rmm811j" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack6.png" id="22_6p25i"]
+[ext_resource type="Texture2D" uid="uid://c5mi6jsviyc6h" path="res://scenes/characters/Boat/MinionBoat/minionBoatFront/minionBoatFront1.png" id="24_2upq0"]
+[ext_resource type="Texture2D" uid="uid://bqath2nesk4o4" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack7.png" id="24_x8q2x"]
+[ext_resource type="Texture2D" uid="uid://dlibn1lrxkj0s" path="res://scenes/characters/Boat/MinionBoat/minionBoatFront/minionBoatFront2.png" id="25_43q46"]
+[ext_resource type="Texture2D" uid="uid://8hhankwoutc0" path="res://scenes/characters/Boat/MinionBoat/minionBoatFront/minionBoatFront.png" id="25_385bc"]
+[ext_resource type="Texture2D" uid="uid://47fleyxpc8b5" path="res://scenes/characters/Boat/MinionBoat/minionBoatFront/minionBoatFront3.png" id="26_6kr4d"]
+[ext_resource type="Texture2D" uid="uid://bctna4ytohlop" path="res://scenes/characters/Boat/MinionBoat/minionBoatFront/minionBoatFront4.png" id="27_w14kt"]
+[ext_resource type="Texture2D" uid="uid://cgvtrxcek4eyr" path="res://scenes/characters/Boat/MinionBoat/minionBoatFront/minionBoatFront5.png" id="28_pm5nr"]
+[ext_resource type="Texture2D" uid="uid://c3dq721musn10" path="res://scenes/characters/Boat/MinionBoat/minionBoatFront/minionBoatFront6.png" id="29_edb1k"]
+[ext_resource type="Texture2D" uid="uid://b1tx0ej7phvdl" path="res://scenes/characters/Boat/MinionBoat/minionBoatFront/minionBoatFront7.png" id="30_bfrl3"]
+
+[sub_resource type="Animation" id="Animation_2a8kc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rfqdd"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.05235987755982989, 0.00523598775598318, -0.05235987755982989]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yfdea"]
+_data = {
+&"RESET": SubResource("Animation_2a8kc"),
+&"walk": SubResource("Animation_rfqdd")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfdea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t3hab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y8pin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_385bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x8q2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qpe1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4uf04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fu5m5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u1nnr")
+}],
+"loop": true,
+"name": &"carry_back",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_165mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fbcax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ljc6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_oyfno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_32i7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qepkp")
+}],
+"loop": true,
+"name": &"carry_front",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_kkny7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ul6t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_j4o06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_385bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4fime")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ettfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6p25i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x8q2x")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_385bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2upq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_43q46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6kr4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_w14kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pm5nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_edb1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bfrl3")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 10.0
+}]
 
 [node name="Boat" type="Node2D"]
 script = ExtResource("1_kckb5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0.954, 0.07999998, 1)
 scale = Vector2(0.328125, 0.328125)
 texture = ExtResource("2_x3gxx")
 
@@ -17,3 +199,14 @@ navigation_layers = 2
 [node name="NavAgentTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yfdea")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -31)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yfdea")
+animation = &"carry_back"

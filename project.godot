@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Jame Gam"
+run/main_scene="uid://b10ksjfsi5pr0"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://duinvami50xkc"
 
 [autoload]
 
@@ -23,6 +24,9 @@ Consts="*res://scenes/global_scenes/consts.gd"
 CurrencyManager="*res://scenes/GameManagers/CurrencyManager/currency_manager.gd"
 DayCycleManager="*res://scenes/GameManagers/day_cycle_manager.gd"
 FoodManager="*res://scenes/GameManagers/FoodManager/food_manager.gd"
+SceneManager="*res://addons/scene_manager/scene_manager.tscn"
+Scenes="*res://addons/scene_manager/scenes.gd"
+AudioManager="*res://scenes/AudioManager.tscn"
 
 [display]
 
@@ -30,10 +34,19 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
+
 [global_group]
 
 available_tiles=""
 camp=""
+game_node=""
+guys_node=""
+demon_area=""
+game_root=""
+camera=""
 
 [input]
 
@@ -84,6 +97,21 @@ wheel_down={
 empty_visibility={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
+]
+}
+pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+money={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":true,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+cycle_toggle={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":true,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

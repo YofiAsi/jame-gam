@@ -5,6 +5,8 @@ enum Tile {
 	WATER_TILE,
 	CANYON_TILE,
 	AVAILABLE_TILE,
+	GRASS,
+	BOULDER,
 }
 
 enum Direction {

@@ -6,7 +6,7 @@
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lqc1q"]
 vertices = PackedVector2Array(71.42969, -51.242188, -5.953125, 5.5625, -83.046875, -51.84375, -7.8671875, -105.77344)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(88, -52, -8, -118, -100, -52, -6, 18, 88, -51)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(88, -52, -8, -118, -67, -50, -6, 18, 88, -51)])
 
 [node name="RoadTileR" type="Node2D"]
 script = ExtResource("1_yb2gx")
@@ -28,11 +28,9 @@ navigation_polygon = SubResource("NavigationPolygon_lqc1q")
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
 position = Vector2(2, -2)
-bidirectional = false
 start_position = Vector2(-253, 150)
 end_position = Vector2(-35, -31)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
 start_position = Vector2(-211, -216)
 end_position = Vector2(-32, -73)

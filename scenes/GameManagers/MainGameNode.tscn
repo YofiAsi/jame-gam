@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://connkatv77nua"]
+[gd_scene load_steps=37 format=3 uid="uid://connkatv77nua"]
 
 [ext_resource type="Script" uid="uid://ckhsbi6pvekwk" path="res://scenes/GameManagers/main_game_node.gd" id="1_d6v67"]
 [ext_resource type="Script" uid="uid://bf6whxbwsv0xs" path="res://scenes/GameManagers/portal_manager.gd" id="2_1cwct"]
@@ -7,27 +7,40 @@
 [ext_resource type="Script" uid="uid://bsws70x373ot4" path="res://test/camera_2d.gd" id="4_1cwct"]
 [ext_resource type="PackedScene" uid="uid://dn86bsmhfehe7" path="res://scenes/WorldMap/WorldMap.tscn" id="5_5rtb5"]
 [ext_resource type="Script" uid="uid://cffsxppxbna0m" path="res://scenes/GameManagers/hud.gd" id="5_tfa6w"]
-[ext_resource type="Texture2D" uid="uid://bnroswrtgob0g" path="res://assets/art/tiles/TileReg_1.png" id="6_d628t"]
 [ext_resource type="Script" uid="uid://g520lfferol1" path="res://ui/buttons/select_tile_button/select_tile_button.gd" id="7_lfce0"]
-[ext_resource type="Texture2D" uid="uid://b01hx6mrpsag3" path="res://assets/art/tiles/TileReg_4 - Copy.png" id="8_yv3pk"]
+[ext_resource type="Script" uid="uid://b5tp8ex7bskuj" path="res://scenes/GameManagers/buy_button_container.gd" id="8_43ytc"]
+[ext_resource type="Texture2D" uid="uid://btctsvl7jl3tl" path="res://scenes/tiles/RoadTile/sprites/Road_E icon.png" id="8_lfce0"]
+[ext_resource type="Texture2D" uid="uid://dp1d0o3ampsmj" path="res://assets/art/tiles/TileReg_2 icon.png" id="8_yv3pk"]
 [ext_resource type="Script" uid="uid://ca7xh6cx35xqt" path="res://test/money_label.gd" id="9_y4uli"]
-[ext_resource type="Script" uid="uid://b3uvifrij30ry" path="res://scenes/GameManagers/day_count.gd" id="10_tfa6w"]
 [ext_resource type="Script" uid="uid://rc6ytr4awkkt" path="res://scenes/GameManagers/food_label.gd" id="10_tpuus"]
+[ext_resource type="Texture2D" uid="uid://brhbgw83dltqy" path="res://scenes/tiles/RiverTile/sprites/River_E icon.png" id="10_yv3pk"]
 [ext_resource type="Script" uid="uid://cvktvjt5cnqnq" path="res://scenes/GameManagers/background.gd" id="11_jnkpk"]
 [ext_resource type="Shader" uid="uid://5oecyiajl222" path="res://shaders/background.gdshader" id="11_nj1lh"]
+[ext_resource type="Texture2D" uid="uid://byphyfn1l4vvq" path="res://scenes/tiles/Defense/TowerTile icon.png" id="12_y4uli"]
+[ext_resource type="Texture2D" uid="uid://cdmarruur2te6" path="res://scenes/tiles/LandCamp/CampTile ICON.png" id="15_4ire4"]
+[ext_resource type="Texture2D" uid="uid://cmef2iighphhw" path="res://assets/Ui/FoodLogo.png" id="16_802o0"]
+[ext_resource type="Texture2D" uid="uid://nnmmms01hk66" path="res://scenes/tiles/RiverCamp/WaterCampTile icon.png" id="16_lp2uu"]
+[ext_resource type="Script" uid="uid://bs8mktln1ev4m" path="res://scenes/GameManagers/man_count.gd" id="18_0q2j1"]
+[ext_resource type="Texture2D" uid="uid://bghf1du417fny" path="res://scenes/characters/Boat/MinionBoat/minionBoatBack/minionBoatBack1.png" id="18_2xk8y"]
+[ext_resource type="Texture2D" uid="uid://d3igahfln5k14" path="res://assets/Ui/CoinLogo.png" id="18_j6k6t"]
+[ext_resource type="Texture2D" uid="uid://q7ekm7hil3n5" path="res://assets/art/icons/MinionFront_icon.png" id="19_nj1lh"]
+[ext_resource type="Script" uid="uid://c7oala5bwgkxb" path="res://scenes/GameManagers/day_cycle_container.gd" id="20_y6wwc"]
+[ext_resource type="Script" uid="uid://ctskaxaf7lrw8" path="res://scenes/GameManagers/day_cycle_progress.gd" id="21_43ytc"]
+[ext_resource type="Script" uid="uid://j04sdeq7thw" path="res://scenes/GameManagers/guys.gd" id="21_nj1lh"]
+[ext_resource type="Texture2D" uid="uid://b3s2mxmfptx3m" path="res://assets/Ui/SunUi.png" id="23_4ire4"]
+[ext_resource type="Texture2D" uid="uid://glsvnrykg6ad" path="res://assets/Ui/Untitled_Artwork_86.png" id="27_j6k6t"]
 
-[sub_resource type="Curve" id="Curve_tpuus"]
+[sub_resource type="Curve" id="Curve_lfce0"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_tpuus"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 181, -942, 0, 0, 0, 0, -1405, -884, 0, 0, 0, 0, -1766, 616, 0, 0, 0, 0, -1333, 1842, 0, 0, 0, 0, 988, 2159, 0, 0, 0, 0, 2964, 1943, 0, 0, 0, 0, 3858, 1337, 0, 0, 0, 0, 4233, -494, 0, 0, 0, 0, 2531, -1071, 0, 0, 0, 0, 184, -943)
-}
-point_count = 10
-
 [sub_resource type="LabelSettings" id="LabelSettings_tdaqa"]
 font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_0q2j1"]
+font_size = 24
+
+[sub_resource type="Theme" id="Theme_e3bb3"]
 
 [sub_resource type="Curve" id="Curve_jnkpk"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -39,14 +52,17 @@ shader_parameter/color0 = Color(0.53, 0.81, 0.92, 1)
 shader_parameter/color1 = Color(0.27, 0.58, 0.8, 1)
 shader_parameter/camera_position = Vector2(0, 0)
 shader_parameter/camera_scale = 1.0
-shader_parameter/noise_frequency = 0.004
+shader_parameter/noise_frequency = 0.001
 shader_parameter/noise_offset = Vector2(0, 0)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_43ytc"]
 
-[node name="MainGameNode" type="Node2D"]
+[node name="MainGameNode" type="Node2D" groups=["game_node"]]
 script = ExtResource("1_d6v67")
-modulate_curve = SubResource("Curve_tpuus")
+modulate_curve = SubResource("Curve_lfce0")
+
+[node name="WorldMap" parent="." instance=ExtResource("5_5rtb5")]
+position = Vector2(1, 0)
 
 [node name="PortalManager" type="Node2D" parent="." node_paths=PackedStringArray("demons_node")]
 script = ExtResource("2_1cwct")
@@ -56,68 +72,48 @@ demons_node = NodePath("../Demons")
 [node name="Path2D" type="Path2D" parent="PortalManager"]
 position = Vector2(-2941.5654, -1179.879)
 scale = Vector2(3.3847308, 3.331579)
-curve = SubResource("Curve2D_tpuus")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="PortalManager/Path2D"]
 position = Vector2(181, -942)
 rotation = 3.105039
 
 [node name="SpawnTimer" type="Timer" parent="PortalManager"]
+wait_time = 0.2
 one_shot = true
 
 [node name="TileManager" parent="." node_paths=PackedStringArray("world_map") instance=ExtResource("2_jnkpk")]
 world_map = NodePath("../WorldMap")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(965, 545)
-zoom = Vector2(0.5, 0.5)
+[node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
+zoom = Vector2(0.2, 0.2)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("4_1cwct")
 
-[node name="WorldMap" parent="." instance=ExtResource("5_5rtb5")]
-
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 0
 script = ExtResource("5_tfa6w")
 
-[node name="Button" type="Button" parent="HUD"]
-offset_top = 64.0
-offset_right = 81.0
-offset_bottom = 95.0
-text = "day-night
-"
-
-[node name="Button2" type="Button" parent="HUD"]
-offset_left = 1.0
-offset_top = 131.0
-offset_right = 106.0
-offset_bottom = 162.0
-text = "spawn camp"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
-visible = false
-anchors_preset = 12
+[node name="BuyButtonContainer" type="HBoxContainer" parent="HUD"]
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 313.0
-offset_top = -199.0
-offset_right = -313.0
-offset_bottom = -21.0
-grow_horizontal = 2
+offset_left = -859.0
+offset_top = -208.0
+offset_right = -23.0
+offset_bottom = -19.0
+grow_horizontal = 0
 grow_vertical = 0
 alignment = 1
+script = ExtResource("8_43ytc")
 
-[node name="TextureButton4" type="TextureButton" parent="HUD/HBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = ExtResource("6_d628t")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("7_lfce0")
 
-[node name="TextureButton9" type="TextureButton" parent="HUD/HBoxContainer"]
+[node name="BuyReg" type="TextureButton" parent="HUD/BuyButtonContainer/VBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -125,31 +121,293 @@ texture_normal = ExtResource("8_yv3pk")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("7_lfce0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer4"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("18_j6k6t")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyRoad" type="TextureButton" parent="HUD/BuyButtonContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("8_lfce0")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("18_j6k6t")
+expand_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyRiver" type="TextureButton" parent="HUD/BuyButtonContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("10_yv3pk")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
 tile_type = 1
 
-[node name="Coin" type="Label" parent="HUD"]
-offset_left = 1884.0
-offset_right = 1924.0
-offset_bottom = 55.0
-text = "0"
-label_settings = SubResource("LabelSettings_tdaqa")
-script = ExtResource("9_y4uli")
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
 
-[node name="Food" type="Label" parent="HUD"]
-offset_left = 1884.0
-offset_top = 87.0
-offset_right = 1924.0
-offset_bottom = 142.0
+[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("18_j6k6t")
+expand_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyTower" type="TextureButton" parent="HUD/BuyButtonContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("12_y4uli")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+tile_type = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("18_j6k6t")
+expand_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyLandCamp" type="TextureButton" parent="HUD/BuyButtonContainer/VBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("15_4ire4")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+tile_type = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer5"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer5/HBoxContainer"]
+layout_mode = 2
+text = "15"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer5/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("16_802o0")
+expand_mode = 2
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="HUD/BuyButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyWaterCamp" type="TextureButton" parent="HUD/BuyButtonContainer/VBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("16_lp2uu")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("7_lfce0")
+tile_type = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/BuyButtonContainer/VBoxContainer6"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/BuyButtonContainer/VBoxContainer6/HBoxContainer"]
+layout_mode = 2
+text = "20 "
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/BuyButtonContainer/VBoxContainer6/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("16_802o0")
+expand_mode = 2
+
+[node name="CurrencyCountContainer" type="VBoxContainer" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -678.0
+offset_top = 38.0
+offset_right = -34.0
+offset_bottom = 199.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/CurrencyCountContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Food" type="Label" parent="HUD/CurrencyCountContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "0"
 label_settings = SubResource("LabelSettings_tdaqa")
+horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("10_tpuus")
 
-[node name="DayCount" type="Label" parent="HUD"]
-offset_top = 1044.0
-offset_right = 40.0
-offset_bottom = 1067.0
-text = "1"
-script = ExtResource("10_tfa6w")
+[node name="Control" type="Control" parent="HUD/CurrencyCountContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/CurrencyCountContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("16_802o0")
+expand_mode = 2
+
+[node name="Control2" type="Control" parent="HUD/CurrencyCountContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/CurrencyCountContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Coin" type="Label" parent="HUD/CurrencyCountContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+label_settings = SubResource("LabelSettings_tdaqa")
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("9_y4uli")
+
+[node name="Control2" type="Control" parent="HUD/CurrencyCountContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/CurrencyCountContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("18_j6k6t")
+expand_mode = 2
+
+[node name="PauseContainer" type="VBoxContainer" parent="HUD"]
+visible = false
+offset_left = 40.0
+offset_top = 23.0
+offset_right = 140.0
+offset_bottom = 123.0
+
+[node name="PauseButton" type="TextureButton" parent="HUD/PauseContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("18_2xk8y")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ManCountContainer" type="HBoxContainer" parent="HUD"]
+offset_left = 889.0
+offset_top = 28.0
+offset_right = 1030.0
+offset_bottom = 78.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="ManCount" type="Label" parent="HUD/ManCountContainer"]
+layout_mode = 2
+text = "0 / 300"
+label_settings = SubResource("LabelSettings_0q2j1")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("18_0q2j1")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/ManCountContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("19_nj1lh")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DayCycleContainer" type="HBoxContainer" parent="HUD"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -120.0
+offset_right = 651.0
+offset_bottom = -27.0
+grow_vertical = 0
+script = ExtResource("20_y6wwc")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/DayCycleContainer"]
+layout_mode = 2
+texture = ExtResource("23_4ire4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="HUD/DayCycleContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="DayCycleProgress" type="ProgressBar" parent="HUD/DayCycleContainer"]
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_e3bb3")
+show_percentage = false
+script = ExtResource("21_43ytc")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -4
@@ -159,15 +417,61 @@ curve = SubResource("Curve_jnkpk")
 [node name="TextureRect" type="TextureRect" parent="Background"]
 z_index = -100
 material = SubResource("ShaderMaterial_y6wwc")
-offset_left = -25.0
-offset_top = -35.0
-offset_right = 1945.0
-offset_bottom = 1118.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -49.0
+offset_right = 54.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_43ytc")
 expand_mode = 2
 
-[node name="Guys" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(0.3486, 0.50906676, 0.83, 0.6117647)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_j6k6t")
+
+[node name="Guys" type="Node2D" parent="." groups=["guys_node"]]
+script = ExtResource("21_nj1lh")
 
 [node name="Demons" type="Node2D" parent="."]
 
-[connection signal="pressed" from="HUD/Button2" to="." method="_on_button_2_pressed"]
+[node name="SpawnCampTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SpawnDemonsTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+z_index = -100
+material = SubResource("ShaderMaterial_y6wwc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -55621.0
+offset_top = -30032.0
+offset_right = 55621.0
+offset_bottom = 30032.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_43ytc")
+expand_mode = 2

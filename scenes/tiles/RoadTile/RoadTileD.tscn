@@ -28,11 +28,9 @@ use_edge_connections = false
 [node name="NavigationLinks" type="Node2D" parent="."]
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
-start_position = Vector2(209, -219)
+start_position = Vector2(177, -190)
 end_position = Vector2(21, -71)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
-start_position = Vector2(-211, -216)
+start_position = Vector2(-180, -189)
 end_position = Vector2(-32, -73)

@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://iufxp75c6w1k"]
+
+[ext_resource type="Script" uid="uid://c4fb3cvcm1oab" path="res://scenes/GameManagers/GameRoot/game_root.gd" id="1_l1e87"]
+[ext_resource type="PackedScene" uid="uid://connkatv77nua" path="res://scenes/GameManagers/MainGameNode.tscn" id="1_vecp1"]
+[ext_resource type="Script" uid="uid://rthahvwximci" path="res://scenes/GameManagers/GameRoot/pause_menu.gd" id="3_ghhod"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l1e87"]
+font_size = 100
+outline_size = 50
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameRoot" type="Node2D" groups=["game_root"]]
+process_mode = 3
+script = ExtResource("1_l1e87")
+
+[node name="MainGameNode" parent="." instance=ExtResource("1_vecp1")]
+process_mode = 1
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("3_ghhod")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.70980394)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -207.0
+offset_top = 209.0
+offset_right = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PauseMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+text = "Pause"
+label_settings = SubResource("LabelSettings_l1e87")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PauseMenu/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Restart"
+
+[node name="Control" type="Control" parent="PauseMenu/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Music" type="HBoxContainer" parent="PauseMenu/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseMenu/VBoxContainer/VBoxContainer/Music"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "Music"
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="PauseMenu/VBoxContainer/VBoxContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="SXF" type="HBoxContainer" parent="PauseMenu/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseMenu/VBoxContainer/VBoxContainer/SXF"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "SFX"
+vertical_alignment = 1
+
+[node name="SfxSlider" type="HSlider" parent="PauseMenu/VBoxContainer/VBoxContainer/SXF"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1

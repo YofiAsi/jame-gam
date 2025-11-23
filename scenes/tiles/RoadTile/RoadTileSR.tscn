@@ -26,11 +26,10 @@ navigation_polygon = SubResource("NavigationPolygon_gaf84")
 [node name="NavigationLinks" type="Node2D" parent="."]
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
-start_position = Vector2(-246, 162)
-end_position = Vector2(-1, -27)
+position = Vector2(-21, 3)
+start_position = Vector2(-188, 109)
+end_position = Vector2(-66, 18)
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
-start_position = Vector2(212, -207)
-end_position = Vector2(-1, -27)
+start_position = Vector2(178, -168)
+end_position = Vector2(85, -99)

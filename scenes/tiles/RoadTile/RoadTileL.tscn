@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ddhps3yr0ospg" path="res://scenes/tiles/RoadTile/sprites/Road_L.png" id="2_lt06b"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xpnqu"]
-vertices = PackedVector2Array(71.42969, -51.242188, -5.953125, 5.5625, -83.046875, -51.84375, -7.8671875, -105.77344)
+vertices = PackedVector2Array(41.46875, -51.6875, -7.453125, 4.4375, -83.046875, -51.84375, -9.21875, -104.796875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(88, -52, -8, -118, -100, -52, -6, 18, 88, -51)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(95, -57, -8, -118, -100, -52, -6, 18)])
 
 [node name="RoadTileL" type="Node2D"]
 script = ExtResource("1_ybbg0")
@@ -26,11 +26,9 @@ navigation_polygon = SubResource("NavigationPolygon_xpnqu")
 [node name="NavigationLinks" type="Node2D" parent="."]
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
-start_position = Vector2(209, -219)
+start_position = Vector2(179, -194)
 end_position = Vector2(21, -71)
 
 [node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
-start_position = Vector2(232, 118)
+start_position = Vector2(189, 107)
 end_position = Vector2(24, -29)

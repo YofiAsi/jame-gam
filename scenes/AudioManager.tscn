@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dju43ksy3sw6a"]
+[gd_scene load_steps=22 format=3 uid="uid://c8epcsp8b5ot"]
 
 [ext_resource type="AudioStream" uid="uid://jqaxikjtrh4r" path="res://assets/Sound/Wind_Ambient_loopable.mp3" id="1_hux41"]
+[ext_resource type="Script" uid="uid://bdjbh4jcp0mcp" path="res://scenes/audio_manager.gd" id="1_kuv82"]
 [ext_resource type="AudioStream" uid="uid://c0evogvo6gn8c" path="res://assets/Sound/Demon_click.mp3" id="1_wk67d"]
 [ext_resource type="AudioStream" uid="uid://caduxxe4w4th6" path="res://assets/Sound/Map_Hover.mp3" id="2_lp0i2"]
 [ext_resource type="AudioStream" uid="uid://xtf7m7k2pn5s" path="res://assets/Sound/Tiles_Boogle.mp3" id="3_kuv82"]
@@ -16,11 +17,18 @@
 [ext_resource type="AudioStream" uid="uid://hy24gtwrxyjs" path="res://assets/Sound/Coin_collected.mp3" id="14_2br8b"]
 [ext_resource type="AudioStream" uid="uid://kut3wfrt4j2a" path="res://assets/Sound/Demon_kill.mp3" id="15_bayib"]
 [ext_resource type="AudioStream" uid="uid://cnnwgviqgvfbv" path="res://assets/Sound/Prayer_collected.mp3" id="16_nrd24"]
-[ext_resource type="AudioStream" uid="uid://b7ak6ddaq44ms" path="res://assets/Music/Music game jam INTRO.mp3" id="17_lp0i2"]
 [ext_resource type="AudioStream" uid="uid://dmpxjrsxkm04g" path="res://assets/Sound/Slider-Thick.mp3" id="18_acs0d"]
-[ext_resource type="AudioStream" uid="uid://bgtwq7rx7wo88" path="res://assets/Music/Music game jam LOOP.mp3" id="18_kuv82"]
+[ext_resource type="AudioStream" uid="uid://bhgrbkcc04gyl" path="res://assets/Music/intro.wav" id="18_kuv82"]
+[ext_resource type="AudioStream" uid="uid://mjxkmvu7swtt" path="res://assets/Music/music_loop.wav" id="19_kuv82"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_kuv82"]
+fade_time = 0.0
+stream_count = 2
+stream_0 = ExtResource("18_kuv82")
+stream_1 = ExtResource("19_kuv82")
 
 [node name="AudioManager" type="Node"]
+script = ExtResource("1_kuv82")
 
 [node name="PlayerAction" type="Node" parent="."]
 
@@ -73,7 +81,7 @@ bus = &"Ambience"
 
 [node name="Night-ambience" type="AudioStreamPlayer" parent="Ambience"]
 stream = ExtResource("12_rxh72")
-bus = &"Ambience"
+bus = &"SFX"
 
 [node name="Effect" type="Node" parent="."]
 
@@ -95,12 +103,9 @@ bus = &"Effects"
 
 [node name="Music" type="Node" parent="."]
 
-[node name="MusicGameJamIntro" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_lp0i2")
-
-[node name="MusicGameJamLoop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_kuv82")
-parameters/looping = false
+[node name="MainSong" type="AudioStreamPlayer" parent="Music"]
+stream = SubResource("AudioStreamPlaylist_kuv82")
+bus = &"Music"
 
 [node name="UI" type="Node" parent="."]
 

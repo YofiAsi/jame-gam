@@ -1,14 +1,201 @@
-[gd_scene load_steps=3 format=3 uid="uid://koj7f8trhfju"]
+[gd_scene load_steps=38 format=3 uid="uid://koj7f8trhfju"]
 
-[ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="1_6jdad"]
 [ext_resource type="Script" uid="uid://b3sugsb83oxc5" path="res://scenes/characters/SimpleGuy/simple_guy.gd" id="1_l7heu"]
+[ext_resource type="Texture2D" uid="uid://di6f8h0v3uslu" path="res://scenes/characters/SimpleGuy/minion/MinioncarryBack/MinioncarryBack.png" id="2_wb0kl"]
+[ext_resource type="Texture2D" uid="uid://cjgj4o4vu8l5a" path="res://scenes/characters/SimpleGuy/minion/MinioncarryBack/MinioncarryBack1.png" id="3_3qfk2"]
+[ext_resource type="Texture2D" uid="uid://bv3a0ovioepmo" path="res://scenes/characters/SimpleGuy/minion/MinioncarryBack/MinioncarryBack2.png" id="4_sfgd0"]
+[ext_resource type="Texture2D" uid="uid://buc12418f8x0s" path="res://scenes/characters/SimpleGuy/minion/MinioncarryBack/MinioncarryBack3.png" id="5_nqkb6"]
+[ext_resource type="Texture2D" uid="uid://b3njg4lopdrwh" path="res://scenes/characters/SimpleGuy/minion/MinioncarryBack/MinioncarryBack4.png" id="6_nkeu5"]
+[ext_resource type="Texture2D" uid="uid://bksck44kbvm56" path="res://scenes/characters/SimpleGuy/minion/MinioncarryBack/MinioncarryBack5.png" id="7_tko8h"]
+[ext_resource type="Texture2D" uid="uid://xu4wrlk37ngn" path="res://scenes/characters/SimpleGuy/minion/MinioncarryBack/MinioncarryBack6.png" id="8_66w58"]
+[ext_resource type="Texture2D" uid="uid://503om5lcpvf6" path="res://scenes/characters/SimpleGuy/minion/MinioncarryBack/MinioncarryBack7.png" id="9_egplr"]
+[ext_resource type="Texture2D" uid="uid://b2hpsbyeqpstw" path="res://scenes/characters/SimpleGuy/minion/MinioncarryFront/Minioncarry.png" id="10_6ahht"]
+[ext_resource type="Texture2D" uid="uid://djr62yi2a8uck" path="res://scenes/characters/SimpleGuy/minion/MinioncarryFront/Minioncarry1.png" id="11_hdbjy"]
+[ext_resource type="Texture2D" uid="uid://dmeqv7ftpv52k" path="res://scenes/characters/SimpleGuy/minion/MinioncarryFront/Minioncarry2.png" id="12_deyre"]
+[ext_resource type="Texture2D" uid="uid://cxpuu4kmyjkkj" path="res://scenes/characters/SimpleGuy/minion/MinioncarryFront/Minioncarry3.png" id="13_m6ho1"]
+[ext_resource type="Texture2D" uid="uid://clrfxv37nam8f" path="res://scenes/characters/SimpleGuy/minion/MinioncarryFront/Minioncarry4.png" id="14_e1j68"]
+[ext_resource type="Texture2D" uid="uid://bpffwvc364ibt" path="res://scenes/characters/SimpleGuy/minion/MinioncarryFront/Minioncarry5.png" id="15_dacdv"]
+[ext_resource type="Texture2D" uid="uid://bv6tqy1fjiyv2" path="res://scenes/characters/SimpleGuy/minion/MinioncarryFront/Minioncarry6.png" id="16_k6163"]
+[ext_resource type="Texture2D" uid="uid://1urwyxds8uxj" path="res://scenes/characters/SimpleGuy/minion/MinioncarryFront/Minioncarry7.png" id="17_dmwv4"]
+[ext_resource type="Texture2D" uid="uid://y0i2pbycstx5" path="res://scenes/characters/SimpleGuy/minion/MinionBack/MinionBack.png" id="18_deyre"]
+[ext_resource type="Texture2D" uid="uid://dgh5ttubfr7mq" path="res://scenes/characters/SimpleGuy/minion/MinionBack/MinionBack1.png" id="19_m6ho1"]
+[ext_resource type="Texture2D" uid="uid://sqvvmf35xryg" path="res://scenes/characters/SimpleGuy/minion/MinionBack/MinionBack2.png" id="20_e1j68"]
+[ext_resource type="Texture2D" uid="uid://cvpme2mncgs68" path="res://scenes/characters/SimpleGuy/minion/MinionBack/MinionBack3.png" id="21_dacdv"]
+[ext_resource type="Texture2D" uid="uid://bmdpgc5d41a88" path="res://scenes/characters/SimpleGuy/minion/MinionBack/MinionBack4.png" id="22_k6163"]
+[ext_resource type="Texture2D" uid="uid://b6mm0nd3mb1sa" path="res://scenes/characters/SimpleGuy/minion/MinionBack/MinionBack5.png" id="23_dmwv4"]
+[ext_resource type="Texture2D" uid="uid://b0adq3p6pxtsy" path="res://scenes/characters/SimpleGuy/minion/MinionBack/MinionBack6.png" id="24_ldfub"]
+[ext_resource type="Texture2D" uid="uid://c3f4f2rv4fv5i" path="res://scenes/characters/SimpleGuy/minion/MinionBack/MinionBack7.png" id="25_mbmxi"]
+[ext_resource type="Texture2D" uid="uid://b3i3nhl27okmj" path="res://scenes/characters/SimpleGuy/minion/MinionFront/MinionFront.png" id="26_shyrq"]
+[ext_resource type="Texture2D" uid="uid://c4s2ixtunw3xv" path="res://scenes/characters/SimpleGuy/minion/MinionFront/MinionFront1.png" id="27_gisu1"]
+[ext_resource type="Texture2D" uid="uid://cmv1yanvy6w24" path="res://scenes/characters/SimpleGuy/minion/MinionFront/MinionFront2.png" id="28_iyheh"]
+[ext_resource type="Texture2D" uid="uid://c8p2mq7n5xwlm" path="res://scenes/characters/SimpleGuy/minion/MinionFront/MinionFront3.png" id="29_1lymy"]
+[ext_resource type="Texture2D" uid="uid://5yay4ng0wuhq" path="res://scenes/characters/SimpleGuy/minion/MinionFront/MinionFront4.png" id="30_bdkqy"]
+[ext_resource type="Texture2D" uid="uid://d3m1kudpbhtdi" path="res://scenes/characters/SimpleGuy/minion/MinionFront/MinionFront5.png" id="31_api3m"]
+[ext_resource type="Texture2D" uid="uid://b2fa5vslp0it6" path="res://scenes/characters/SimpleGuy/minion/MinionFront/MinionFront6.png" id="32_udfnd"]
+[ext_resource type="Texture2D" uid="uid://cag2c6emieilk" path="res://scenes/characters/SimpleGuy/minion/MinionFront/MinionFront7.png" id="33_3m3k6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cytmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wb0kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3qfk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sfgd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nqkb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nkeu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tko8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_66w58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_egplr")
+}],
+"loop": true,
+"name": &"carry_back",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_6ahht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hdbjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_deyre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m6ho1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_e1j68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dacdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_k6163")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dmwv4")
+}],
+"loop": true,
+"name": &"carry_front",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_deyre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m6ho1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_e1j68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dacdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_k6163")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dmwv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ldfub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_mbmxi")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_shyrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_gisu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_iyheh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1lymy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bdkqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_api3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_udfnd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_3m3k6")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_mxl0v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_moko0"]
+resource_name = "walk"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.17453292519943295, -0.17453292519943295, 0.17453292519943295]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cytmv"]
+_data = {
+&"RESET": SubResource("Animation_mxl0v"),
+&"walk": SubResource("Animation_moko0")
+}
 
 [node name="SimpleGuy" type="Node2D"]
 script = ExtResource("1_l7heu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.328125, 0.328125)
-texture = ExtResource("1_6jdad")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 100.0
@@ -16,3 +203,14 @@ target_desired_distance = 100.0
 [node name="NavAgentTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -33)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_cytmv")
+animation = &"carry_front"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cytmv")
+}

@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6kf0003ko84k"]
+
+[ext_resource type="Texture2D" uid="uid://dgiu81gesejkf" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart0.png" id="1_jk5pp"]
+[ext_resource type="Texture2D" uid="uid://dwvhpdudbh66c" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart1.png" id="2_u2c7x"]
+[ext_resource type="Texture2D" uid="uid://bgknbnavpowbf" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart2.png" id="3_me8jq"]
+[ext_resource type="Texture2D" uid="uid://nuafj7b001uw" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart3.png" id="4_ktmkb"]
+[ext_resource type="Texture2D" uid="uid://ctaworx2yextd" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart4.png" id="5_c0tbx"]
+[ext_resource type="Texture2D" uid="uid://dfpcqjgmtvev3" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart5.png" id="6_jwyuw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mjtu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jk5pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u2c7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_me8jq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ktmkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c0tbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jwyuw")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 12.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+modulate = Color(2.4325802, 2.4325802, 2.4325802, 1)
+scale = Vector2(2.6533332, 2.6533332)
+sprite_frames = SubResource("SpriteFrames_1mjtu")
+animation = &"spawn"
+frame_progress = 0.87592065

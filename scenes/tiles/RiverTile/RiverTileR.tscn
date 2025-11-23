@@ -1,18 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://min48iynk1c3"]
 
 [ext_resource type="Script" uid="uid://csvl74h8phdpq" path="res://scenes/tiles/RiverTile/river_tile.gd" id="1_in0ga"]
-[ext_resource type="Texture2D" uid="uid://dh1o5yd3faas8" path="res://scenes/tiles/RiverTile/sprites/River_R.png" id="2_in0ga"]
+[ext_resource type="Texture2D" uid="uid://2mnfas48awm2" path="res://scenes/tiles/RiverTile/sprites/River_R.png" id="2_in0ga"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_lqc1q"]
-vertices = PackedVector2Array(44.773438, -20.859375, -23.84375, 24.867188, -77.96094, -13.2421875, -15.578125, -59.828125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(63, -21, -16, -72, -95, -13, -24, 37)])
+vertices = PackedVector2Array(-41.257813, 57.78125, -109.859375, 18.796875, -86.10156, 0.796875, -62.59375, -81.25, 45.90625, -19.242188, -75.09375, -45.671875, -90.02344, -62.960938)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 0, 2, 5), PackedInt32Array(3, 5, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(63, -21, -63, -93, -105, -65, -86, -43, -95, -5, -128, 20, -40, 70)])
 
 [node name="RiverTileR" type="Node2D"]
 script = ExtResource("1_in0ga")
 metadata/_custom_type_script = "uid://csvl74h8phdpq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -81)
 texture = ExtResource("2_in0ga")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -28,14 +29,25 @@ navigation_layers = 2
 [node name="NavigationLinks" type="Node2D" parent="."]
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
-position = Vector2(2, -2)
-bidirectional = false
+position = Vector2(32, 14)
 navigation_layers = 2
-start_position = Vector2(-253, 150)
-end_position = Vector2(-66, 7)
+start_position = Vector2(-194, 111)
+end_position = Vector2(-96, 32)
+
+[node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-6, -13)
+navigation_layers = 2
+start_position = Vector2(-192, 107)
+end_position = Vector2(-96, 32)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
+position = Vector2(-6, 3)
 navigation_layers = 2
-start_position = Vector2(-236, -191)
-end_position = Vector2(-55, -35)
+start_position = Vector2(-182, -149)
+end_position = Vector2(-79, -60)
+
+[node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(8, -6)
+navigation_layers = 2
+start_position = Vector2(-174, -159)
+end_position = Vector2(-79, -60)

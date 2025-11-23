@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://df5tkdre8tcb0"]
 
 [ext_resource type="Script" uid="uid://csvl74h8phdpq" path="res://scenes/tiles/RiverTile/river_tile.gd" id="1_5wspo"]
-[ext_resource type="Texture2D" uid="uid://dn5g3hbr1fm2j" path="res://scenes/tiles/RiverTile/sprites/River_SL.png" id="2_5wspo"]
+[ext_resource type="Texture2D" uid="uid://5t6jd3j4b814" path="res://scenes/tiles/RiverTile/sprites/River_SL.png" id="2_5wspo"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_urisi"]
 vertices = PackedVector2Array(128.96875, 31.320313, 83.13281, 61.882813, -116.77344, -78.140625, -61.242188, -118.46094)
@@ -13,6 +13,7 @@ script = ExtResource("1_5wspo")
 metadata/_custom_type_script = "uid://csvl74h8phdpq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -89)
 texture = ExtResource("2_5wspo")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -27,13 +28,25 @@ navigation_layers = 2
 [node name="NavigationLinks" type="Node2D" parent="."]
 
 [node name="NavigationLink2D" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
+position = Vector2(-19, 7)
 navigation_layers = 2
-start_position = Vector2(209, 112)
-end_position = Vector2(103, 44)
+start_position = Vector2(192, 115)
+end_position = Vector2(108, 41)
+
+[node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(0, -9)
+navigation_layers = 2
+start_position = Vector2(190, 112)
+end_position = Vector2(108, 41)
 
 [node name="NavigationLink2D2" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
+position = Vector2(0, 2)
 navigation_layers = 2
-start_position = Vector2(-250, -225)
-end_position = Vector2(-86, -96)
+start_position = Vector2(-184, -157)
+end_position = Vector2(-93, -82)
+
+[node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(26, -18)
+navigation_layers = 2
+start_position = Vector2(-176, -159)
+end_position = Vector2(-93, -82)

@@ -7,7 +7,6 @@ var target_color0: Color
 var target_color1: Color
 var current_color0: Color
 var current_color1: Color
-var transition_speed: float = 0.3
  # Adjust speed as needed
 var progress: float = 0.0
 
@@ -32,7 +31,7 @@ func switch_day() -> void:
 	target_color1 = Color(0.27, 0.58, 0.80, 1.0)
 
 func _process(delta):
-	self.progress += transition_speed * delta
+	self.progress += Consts.NIGHT_TRANSITION_SPEED * delta
 	self.progress = clamp(progress, 0.0, 1.0)
 	var t = curve.sample(progress)
 	

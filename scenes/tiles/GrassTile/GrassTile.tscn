@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://lgqlregvm5l1"]
+
+[ext_resource type="Script" uid="uid://by5g2h3l4x16i" path="res://scenes/tiles/GrassTile/grass_tile.gd" id="1_164ti"]
+[ext_resource type="Texture2D" uid="uid://ctkrvxy0b8ipv" path="res://assets/art/tiles/TileReg_2.png" id="2_164ti"]
+
+[node name="GrassTile" type="Node2D"]
+script = ExtResource("1_164ti")
+tile_type = 4
+metadata/_custom_type_script = "uid://blj3pdtv5rpxr"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_164ti")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(204, -52, -1, 107, -217, -46, 0, -199)

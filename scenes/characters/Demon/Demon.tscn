@@ -1,21 +1,193 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfjqmp12rhs65"]
+[gd_scene load_steps=31 format=3 uid="uid://cfjqmp12rhs65"]
 
 [ext_resource type="Script" uid="uid://bgcdky8mf7or8" path="res://scenes/characters/Demon/demon.gd" id="1_5olcj"]
 [ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="2_2ckmm"]
+[ext_resource type="Texture2D" uid="uid://dgiu81gesejkf" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart0.png" id="3_mqouq"]
+[ext_resource type="Texture2D" uid="uid://dwvhpdudbh66c" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart1.png" id="4_vna8k"]
+[ext_resource type="Texture2D" uid="uid://bgknbnavpowbf" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart2.png" id="5_eaknv"]
+[ext_resource type="Texture2D" uid="uid://nuafj7b001uw" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart3.png" id="6_ywisb"]
+[ext_resource type="Texture2D" uid="uid://ctaworx2yextd" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart4.png" id="7_sc4lu"]
+[ext_resource type="Texture2D" uid="uid://dfpcqjgmtvev3" path="res://scenes/characters/Demon/Demon/DemonFart/DemonFart5.png" id="8_vrdff"]
+[ext_resource type="Texture2D" uid="uid://cu6sbyvy4ewd6" path="res://scenes/characters/Demon/Demon/DemonsBack/DemonsBack1.png" id="9_h4bwm"]
+[ext_resource type="Texture2D" uid="uid://brkjergxhfh8l" path="res://scenes/characters/Demon/Demon/DemonsBack/DemonsBack2.png" id="10_vth83"]
+[ext_resource type="Texture2D" uid="uid://w7wb7231r5w" path="res://scenes/characters/Demon/Demon/DemonsBack/DemonsBack3.png" id="11_yu6de"]
+[ext_resource type="Texture2D" uid="uid://ba8adop5aewrk" path="res://scenes/characters/Demon/Demon/DemonsBack/DemonsBack4.png" id="12_bphe8"]
+[ext_resource type="Texture2D" uid="uid://cw6g7le6by1n3" path="res://scenes/characters/Demon/Demon/DemonsBack/DemonsBack5.png" id="13_ql3ji"]
+[ext_resource type="Texture2D" uid="uid://dv56uwn3ec3t8" path="res://scenes/characters/Demon/Demon/DemonsBack/DemonsBack6.png" id="14_6ooyv"]
+[ext_resource type="Texture2D" uid="uid://dqa0nflaa6xta" path="res://scenes/characters/Demon/Demon/DemonsBack/DemonsBack7.png" id="15_nt72x"]
+[ext_resource type="Texture2D" uid="uid://brfe6eqb1tqjj" path="res://scenes/characters/Demon/Demon/DemonsBack/DemonsBack.png" id="16_ofnhf"]
+[ext_resource type="Texture2D" uid="uid://c8y4t0brm4tal" path="res://scenes/characters/Demon/Demon/DemonFront/Demons1.png" id="17_d7mkw"]
+[ext_resource type="Texture2D" uid="uid://dijnagpn6orx3" path="res://scenes/characters/Demon/Demon/DemonFront/Demons2.png" id="18_grf5s"]
+[ext_resource type="Texture2D" uid="uid://bjb0kpww8t0k3" path="res://scenes/characters/Demon/Demon/DemonFront/Demons3.png" id="19_abx4x"]
+[ext_resource type="Texture2D" uid="uid://btjxkwacqw2rm" path="res://scenes/characters/Demon/Demon/DemonFront/Demons4.png" id="20_36x2y"]
+[ext_resource type="Texture2D" uid="uid://cqyr5nvo4xorm" path="res://scenes/characters/Demon/Demon/DemonFront/Demons5.png" id="21_aayep"]
+[ext_resource type="Texture2D" uid="uid://bwgw0fanyvgo3" path="res://scenes/characters/Demon/Demon/DemonFront/Demons6.png" id="22_5hoa3"]
+[ext_resource type="Texture2D" uid="uid://m0g4we8ey5us" path="res://scenes/characters/Demon/Demon/DemonFront/Demons7.png" id="23_gy18y"]
+[ext_resource type="Texture2D" uid="uid://cwofyuna5dqyt" path="res://scenes/characters/Demon/Demon/DemonFront/Demons.png" id="24_nd6ix"]
+[ext_resource type="AudioStream" uid="uid://dav8xm1vx24vh" path="res://assets/Sound/Tiles_Select-grab.mp3" id="25_vna8k"]
+[ext_resource type="Texture2D" uid="uid://cear0a12ga65g" path="res://assets/art/tiles/WarningSign.png" id="26_eaknv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ckmm"]
-radius = 70.00714
+radius = 133.06013
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s87qd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mqouq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vna8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eaknv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ywisb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sc4lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vrdff")
+}],
+"loop": false,
+"name": &"die",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mqouq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vna8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eaknv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ywisb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sc4lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vrdff")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_h4bwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vth83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yu6de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bphe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ql3ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6ooyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nt72x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ofnhf")
+}],
+"loop": true,
+"name": &"walk_back",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_d7mkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_grf5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_abx4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_36x2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_aayep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5hoa3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gy18y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nd6ix")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_vna8k"]
+offsets = PackedFloat32Array(0.051948052, 0.41558442)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eaknv"]
+gradient = SubResource("Gradient_vna8k")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Demon" type="Node2D"]
 script = ExtResource("1_5olcj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 0.13, 0.13, 1)
 texture = ExtResource("2_2ckmm")
 
-[node name="HitBox" type="Area2D" parent="."]
+[node name="HitBox" type="Area2D" parent="." groups=["demon_area"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_2ckmm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_s87qd")
+animation = &"walk_front"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_vna8k")
+bus = &"SFX"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(8.437501, 8.437501)
+energy = 2.0
+texture = SubResource("GradientTexture2D_eaknv")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-65, -65, 130, 130)
+
+[node name="WarningIcon" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0.41000003, 0.41000003, 1)
+scale = Vector2(0.7108434, 0.7108434)
+texture = ExtResource("26_eaknv")
+
+[node name="PointLight2D2" type="PointLight2D" parent="WarningIcon"]
+scale = Vector2(4.9237285, 4.923728)
+color = Color(1, 0, 0, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_eaknv")
 
 [connection signal="input_event" from="HitBox" to="." method="_on_input_event"]

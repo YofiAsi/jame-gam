@@ -1,28 +1,106 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2k8mvmffwj3k"]
+[gd_scene load_steps=11 format=3 uid="uid://b2k8mvmffwj3k"]
 
 [ext_resource type="Script" uid="uid://88x6q76yuukr" path="res://scenes/tiles/RiverCamp/river_camp.gd" id="1_rvtyl"]
-[ext_resource type="Texture2D" uid="uid://b3p5ud6fwvojs" path="res://scenes/tiles/LandCamp/CampTile.png" id="2_rvtyl"]
-[ext_resource type="Texture2D" uid="uid://b0busn6keve2r" path="res://icon.svg" id="3_vwisk"]
+[ext_resource type="Texture2D" uid="uid://bneqi0e5jhpr8" path="res://scenes/tiles/RiverCamp/WaterCampTile.png" id="2_vwisk"]
+[ext_resource type="Script" uid="uid://cj2m55x4nf8ms" path="res://scenes/tiles/circle.gd" id="4_vwisk"]
+[ext_resource type="Texture2D" uid="uid://cear0a12ga65g" path="res://assets/art/tiles/WarningSign.png" id="5_7a68g"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7a68g"]
 vertices = PackedVector2Array(182.40625, -52.367188, 2.6328125, 94.390625, -189.60938, -44.75, 3.9375, -176.85156)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(4, -189, -207, -45, 3, 107, 199, -53)])
 
-[sub_resource type="LabelSettings" id="LabelSettings_bisgu"]
-font_size = 32
-outline_size = 15
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_2pp2p"]
+offsets = PackedFloat32Array(0, 0.70454544)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[node name="RiverCamp" type="Node2D"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vwisk"]
+gradient = SubResource("Gradient_2pp2p")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_2pp2p"]
+resource_name = "fire"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0858752, 0.2093208),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4.9375005, 4.9375005), Vector2(4.2862797, 4.2862797), Vector2(5.3437505, 5.3437505)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0966096, 0.18606293, 0.24868026),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.6, 0, 1), Color(1, 0.6, 0, 0.8235294), Color(1, 0.6, 0, 0.95686275), Color(1, 0.6, 0, 0.73333335)]
+}
+
+[sub_resource type="Animation" id="Animation_yj7yk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8.1875, 8.1875)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.6, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iacst"]
+_data = {
+&"RESET": SubResource("Animation_yj7yk"),
+&"fire": SubResource("Animation_2pp2p")
+}
+
+[node name="RiverCamp" type="Node2D" groups=["camp"]]
 script = ExtResource("1_rvtyl")
 tile_type = 1
 metadata/_custom_type_script = "uid://cktvqrkjjsvl4"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0.4666667, 1, 1)
-position = Vector2(0, -80)
-texture = ExtResource("2_rvtyl")
+position = Vector2(2, -96)
+texture = ExtResource("2_vwisk")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -40,53 +118,111 @@ navigation_layers = 2
 position = Vector2(2, -2)
 bidirectional = false
 navigation_layers = 2
-start_position = Vector2(-253, 150)
+start_position = Vector2(-170, 108)
+end_position = Vector2(-94, 14)
+
+[node name="NavigationLink2D11" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-36, -50)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-170, 123)
+end_position = Vector2(-94, 14)
+
+[node name="NavigationLink2D12" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(64, 31)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-181, 100)
 end_position = Vector2(-94, 14)
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
 bidirectional = false
 navigation_layers = 2
-start_position = Vector2(209, -219)
+start_position = Vector2(174, -168)
+end_position = Vector2(85, -109)
+
+[node name="NavigationLink2D7" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(31, 60)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(174, -189)
+end_position = Vector2(85, -109)
+
+[node name="NavigationLink2D8" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-69, -15)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(191, -164)
 end_position = Vector2(85, -109)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="NavigationLinks"]
 bidirectional = false
 navigation_layers = 2
-start_position = Vector2(-211, -216)
+start_position = Vector2(-162, -184)
+end_position = Vector2(-87, -105)
+
+[node name="NavigationLink2D9" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-38, 40)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-168, -191)
+end_position = Vector2(-87, -105)
+
+[node name="NavigationLink2D10" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(48, -29)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-155, -165)
 end_position = Vector2(-87, -105)
 
 [node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
 bidirectional = false
 navigation_layers = 2
-start_position = Vector2(232, 118)
+start_position = Vector2(166, 89)
+end_position = Vector2(77, 13)
+
+[node name="NavigationLink2D13" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-41, 37)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(179, 87)
+end_position = Vector2(77, 13)
+
+[node name="NavigationLink2D14" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(31, -32)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(167, 83)
 end_position = Vector2(77, 13)
 
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -116.0
-offset_top = -311.0
-offset_right = -49.0
-offset_bottom = -208.0
-grow_horizontal = 2
-metadata/_edit_use_anchors_ = true
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 66)
 
-[node name="BuyMen" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-text = "+1"
-icon = ExtResource("3_vwisk")
-icon_alignment = 1
-vertical_icon_alignment = 2
-expand_icon = true
+[node name="Circle" type="Node2D" parent="."]
+script = ExtResource("4_vwisk")
 
-[node name="MenCount" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "0/10"
-label_settings = SubResource("LabelSettings_bisgu")
+[node name="Dest" type="Marker2D" parent="."]
+position = Vector2(0, -50)
 
-[node name="Boats" type="Node2D" parent="."]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 2
+
+[node name="NoRoute" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0.8666667, 0, 1)
+position = Vector2(-98, -289)
+texture = ExtResource("5_7a68g")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(8.1875, 8.1875)
+color = Color(1, 0.6, 0, 1)
+texture = SubResource("GradientTexture2D_vwisk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iacst")
+}
+autoplay = "fire"

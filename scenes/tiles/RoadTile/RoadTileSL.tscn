@@ -26,11 +26,9 @@ navigation_polygon = SubResource("NavigationPolygon_urisi")
 [node name="NavigationLinks" type="Node2D" parent="."]
 
 [node name="NavigationLink2D" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
 start_position = Vector2(209, 112)
-end_position = Vector2(-2, -37)
+end_position = Vector2(92, 23)
 
 [node name="NavigationLink2D2" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
-start_position = Vector2(-250, -225)
-end_position = Vector2(-4, -38)
+start_position = Vector2(-212, -209)
+end_position = Vector2(-92, -109)

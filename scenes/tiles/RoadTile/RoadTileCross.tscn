@@ -27,21 +27,17 @@ navigation_polygon = SubResource("NavigationPolygon_bdikw")
 
 [node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
 position = Vector2(2, -2)
-bidirectional = false
 start_position = Vector2(-253, 150)
 end_position = Vector2(-35, -31)
 
 [node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
 start_position = Vector2(209, -219)
 end_position = Vector2(21, -71)
 
 [node name="NavigationLink2D5" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
 start_position = Vector2(-211, -216)
 end_position = Vector2(-32, -73)
 
 [node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
-bidirectional = false
 start_position = Vector2(232, 118)
 end_position = Vector2(24, -29)

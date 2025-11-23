@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://1npf5cq7opa"]
+
+[ext_resource type="Script" uid="uid://c02fokbmuj4bf" path="res://scenes/tiles/BoulderTile/boulder_tile.gd" id="1_7pb5r"]
+[ext_resource type="Texture2D" uid="uid://cu41bk8uug3eq" path="res://scenes/tiles/BoulderTile/BoulderTile_1.png" id="2_7pb5r"]
+
+[node name="BoulderTile" type="Node2D"]
+script = ExtResource("1_7pb5r")
+tile_type = 5
+metadata/_custom_type_script = "uid://cktvqrkjjsvl4"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -80)
+texture = ExtResource("2_7pb5r")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-9, 111, 205, -56, 0, -198, -201, -45)

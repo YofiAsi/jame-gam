@@ -1,7 +1,8 @@
-extends Camera2D
+class_name Camera extends Camera2D
 
 const CAMERA_SPEED: float = 1000
 const ZOOM_TICK: float = 0.03
+@onready var path_2d: Path2D = $Path2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

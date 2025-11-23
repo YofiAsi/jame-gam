@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=3 uid="uid://d22lfevmi4lgq"]
+
+[ext_resource type="Script" uid="uid://57yjo15c84oy" path="res://scenes/tiles/RiverFood/river_food.gd" id="1_pbbxt"]
+[ext_resource type="Texture2D" uid="uid://b01hx6mrpsag3" path="res://assets/art/tiles/TileReg_4 - Copy.png" id="2_0pit4"]
+[ext_resource type="Script" uid="uid://cj2m55x4nf8ms" path="res://scenes/tiles/circle.gd" id="3_1a16g"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1a16g"]
+vertices = PackedVector2Array(182.60938, -52.53125, 2.6328125, 94.390625, -190.14063, -45.140625, -1.890625, -186.5625)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2, -199, -207, -45, 3, 107, 199, -53)])
+
+[sub_resource type="LabelSettings" id="LabelSettings_tw664"]
+font_size = 100
+
+[node name="RiverFood" type="Node2D"]
+script = ExtResource("1_pbbxt")
+tile_type = 1
+metadata/_custom_type_script = "uid://cktvqrkjjsvl4"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0pit4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PackedVector2Array(-9, 111, 205, -56, 3, -214, -201, -45)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_1a16g")
+navigation_layers = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = -141.0
+offset_top = -110.0
+offset_right = 142.0
+offset_bottom = 27.0
+text = "Food"
+label_settings = SubResource("LabelSettings_tw664")
+
+[node name="NavigationLinks" type="Node2D" parent="."]
+
+[node name="NavigationLink2D3" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(2, -2)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-182, 101)
+end_position = Vector2(-89, 18)
+
+[node name="NavigationLink2D7" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(38, 22)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-182, 101)
+end_position = Vector2(-89, 18)
+
+[node name="NavigationLink2D8" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-25, -29)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-182, 101)
+end_position = Vector2(-89, 18)
+
+[node name="NavigationLink2D4" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(25, 19)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(135, -161)
+end_position = Vector2(80, -118)
+
+[node name="NavigationLink2D11" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-2, 3)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(135, -161)
+end_position = Vector2(80, -118)
+
+[node name="NavigationLink2D12" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-34, -20)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(135, -161)
+end_position = Vector2(80, -118)
+
+[node name="NavigationLink2D5" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-172, -153)
+end_position = Vector2(-103, -97)
+
+[node name="NavigationLink2D9" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-27, 28)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-172, -153)
+end_position = Vector2(-103, -97)
+
+[node name="NavigationLink2D10" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(37, -25)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(-172, -153)
+end_position = Vector2(-103, -97)
+
+[node name="NavigationLink2D6" type="NavigationLink2D" parent="NavigationLinks"]
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(147, 101)
+end_position = Vector2(71, 31)
+
+[node name="NavigationLink2D13" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(-44, 40)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(152, 87)
+end_position = Vector2(78, 20)
+
+[node name="NavigationLink2D14" type="NavigationLink2D" parent="NavigationLinks"]
+position = Vector2(31, -20)
+bidirectional = false
+navigation_layers = 2
+start_position = Vector2(143, 91)
+end_position = Vector2(64, 28)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 66)
+
+[node name="Circle" type="Node2D" parent="."]
+script = ExtResource("3_1a16g")

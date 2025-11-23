@@ -1,0 +1,197 @@
+[gd_scene load_steps=15 format=3 uid="uid://dd5b8nry8ybc4"]
+
+[ext_resource type="Script" uid="uid://iodimq370fbd" path="res://scenes/tiles/Defense/defence_tile.gd" id="1_rj5wx"]
+[ext_resource type="Texture2D" uid="uid://bqbcuahrfuoq6" path="res://scenes/tiles/Defense/TowerTile.png" id="2_rj5wx"]
+[ext_resource type="AudioStream" uid="uid://fg46e7r0a01x" path="res://assets/Sound/tower_zap.mp3" id="3_blsoi"]
+[ext_resource type="Texture2D" uid="uid://6est7i80no1r" path="res://scenes/tiles/Defense/arrow.png" id="4_yxjq1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rj5wx"]
+radius = 1135.1268
+
+[sub_resource type="Gradient" id="Gradient_yxjq1"]
+offsets = PackedFloat32Array(0.29220778, 0.7467533)
+colors = PackedColorArray(1, 0.73333335, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6dhbt"]
+gradient = SubResource("Gradient_yxjq1")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_2pp2p"]
+offsets = PackedFloat32Array(0.10714286, 0.70454544)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yxjq1"]
+gradient = SubResource("Gradient_2pp2p")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_yj7yk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8.1875, 8.1875)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.6, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2pp2p"]
+resource_name = "fire"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0858752, 0.2093208),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4.9375005, 4.9375005), Vector2(4.2862797, 4.2862797), Vector2(5.3437505, 5.3437505)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0966096, 0.18606293, 0.24868026),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.6, 0, 1), Color(1, 0.6, 0, 0.8235294), Color(1, 0.6, 0, 0.95686275), Color(1, 0.6, 0, 0.73333335)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iacst"]
+_data = {
+&"RESET": SubResource("Animation_yj7yk"),
+&"fire": SubResource("Animation_2pp2p")
+}
+
+[sub_resource type="Animation" id="Animation_6dhbt"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.08005006, 0.14982341, 0.2266282),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.6, 0, 1), Color(1, 0.6, 0, 0.73333335), Color(1, 0.6, 0, 0.8392157), Color(1, 0.6, 0, 0.61960787)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.073559515, 0.13197441, 0.232037),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.21875, 1.2187502), Vector2(1.5, 1.4999999), Vector2(1.1875, 1.1875), Vector2(1.46875, 1.46875)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fats5"]
+_data = {
+&"fire_defense": SubResource("Animation_6dhbt")
+}
+
+[node name="DefenceTile" type="Node2D"]
+script = ExtResource("1_rj5wx")
+tile_type = 2
+metadata/_custom_type_script = "uid://blj3pdtv5rpxr"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -85)
+texture = ExtResource("2_rj5wx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(204, -52, -1, 107, -217, -46, 0, -199)
+
+[node name="DetectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+shape = SubResource("CircleShape2D_rj5wx")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(796, -633, 0, -195)
+antialiased = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_blsoi")
+volume_db = -12.17
+bus = &"SFX"
+
+[node name="Arrow" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow"]
+texture_filter = 1
+position = Vector2(0, -3.9999986)
+rotation = 1.5707964
+scale = Vector2(0.48780486, 0.25824174)
+texture = ExtResource("4_yxjq1")
+
+[node name="PointLight2D" type="PointLight2D" parent="Arrow"]
+position = Vector2(29, -7)
+scale = Vector2(0.84375, 0.84375)
+energy = 2.0
+texture = SubResource("GradientTexture2D_6dhbt")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-21, -232)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-55, -203)
+scale = Vector2(8.1875, 8.1875)
+color = Color(1, 0.6, 0, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_yxjq1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iacst"),
+&"a": SubResource("AnimationLibrary_fats5")
+}
+autoplay = "a/fire_defense"

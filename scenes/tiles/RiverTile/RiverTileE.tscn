@@ -1,13 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://r7jrxf77dk3o"]
 
 [ext_resource type="Script" uid="uid://csvl74h8phdpq" path="res://scenes/tiles/RiverTile/river_tile.gd" id="1_tnjam"]
-[ext_resource type="Texture2D" uid="uid://coda5r6h7ge5x" path="res://scenes/tiles/RiverTile/sprites/River_E.png" id="2_tnjam"]
+[ext_resource type="Texture2D" uid="uid://b2shll0ml6xrt" path="res://scenes/tiles/RiverTile/sprites/River_E.png" id="2_tnjam"]
 
 [node name="RiverTileE" type="Node2D"]
 script = ExtResource("1_tnjam")
 metadata/_custom_type_script = "uid://csvl74h8phdpq"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -80)
 texture = ExtResource("2_tnjam")
 
 [node name="Area2D" type="Area2D" parent="."]
